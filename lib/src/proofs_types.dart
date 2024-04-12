@@ -27,7 +27,7 @@ class ProofsErrorCode {
 
 class ParamsOfProofBlockData extends TonSdkStructure {
   ///Single block's data, retrieved from TONOS API, that needs proof. Required fields are `id` and/or top-level `boc` (for block identification), others are optional.
-  late dynamic? _block;
+  dynamic? _block;
   dynamic? get block => _block;
   ParamsOfProofBlockData({
     required dynamic block,
@@ -53,7 +53,7 @@ class ParamsOfProofBlockData extends TonSdkStructure {
 
 class ParamsOfProofTransactionData extends TonSdkStructure {
   ///Single transaction's data as queried from DApp server, without modifications. The required fields are `id` and/or top-level `boc`, others are optional. In order to reduce network requests count, it is recommended to provide `block_id` and `boc` of transaction.
-  late dynamic? _transaction;
+  dynamic? _transaction;
   dynamic? get transaction => _transaction;
   ParamsOfProofTransactionData({
     required dynamic transaction,
@@ -80,7 +80,7 @@ class ParamsOfProofTransactionData extends TonSdkStructure {
 
 class ParamsOfProofMessageData extends TonSdkStructure {
   ///Single message's data as queried from DApp server, without modifications. The required fields are `id` and/or top-level `boc`, others are optional. In order to reduce network requests count, it is recommended to provide at least `boc` of message and non-null `src_transaction.id` or `dst_transaction.id`.
-  late dynamic? _message;
+  dynamic? _message;
   dynamic? get message => _message;
   ParamsOfProofMessageData({
     required dynamic message,

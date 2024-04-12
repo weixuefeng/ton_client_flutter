@@ -55,27 +55,27 @@ class DebotErrorCode {
 ///[UNSTABLE](UNSTABLE.md) [DEPRECATED](DEPRECATED.md) Describes a debot action in a Debot Context.
 class DebotAction extends TonSdkStructure {
   ///Should be used by Debot Browser as name of menu item.
-  late String? _description;
+  String? _description;
   String? get description => _description;
 
   ///Can be a debot function name or a print string (for Print Action).
-  late String? _name;
+  String? _name;
   String? get name => _name;
 
   ///Action type.
-  late int? _action_type;
+  int? _action_type;
   int? get action_type => _action_type;
 
   ///ID of debot context to switch after action execution.
-  late int? _to;
+  int? _to;
   int? get to => _to;
 
   ///In the form of "param=value,flag". attribute example: instant, args, fargs, sign.
-  late String? _attributes;
+  String? _attributes;
   String? get attributes => _attributes;
 
   ///Used by debot only.
-  late String? _misc;
+  String? _misc;
   String? get misc => _misc;
   DebotAction({
     required String description,
@@ -155,51 +155,51 @@ class DebotAction extends TonSdkStructure {
 ///[UNSTABLE](UNSTABLE.md) [DEPRECATED](DEPRECATED.md) Describes DeBot metadata.
 class DebotInfo extends TonSdkStructure {
   ///DeBot short name.
-  late String? _name;
+  String? _name;
   String? get name => _name;
 
   ///DeBot semantic version.
-  late String? _version;
+  String? _version;
   String? get version => _version;
 
   ///The name of DeBot deployer.
-  late String? _publisher;
+  String? _publisher;
   String? get publisher => _publisher;
 
   ///Short info about DeBot.
-  late String? _caption;
+  String? _caption;
   String? get caption => _caption;
 
   ///The name of DeBot developer.
-  late String? _author;
+  String? _author;
   String? get author => _author;
 
   ///TON address of author for questions and donations.
-  late String? _support;
+  String? _support;
   String? get support => _support;
 
   ///String with the first messsage from DeBot.
-  late String? _hello;
+  String? _hello;
   String? get hello => _hello;
 
   ///String with DeBot interface language (ISO-639).
-  late String? _language;
+  String? _language;
   String? get language => _language;
 
   ///String with DeBot ABI.
-  late String? _dabi;
+  String? _dabi;
   String? get dabi => _dabi;
 
   ///DeBot icon.
-  late String? _icon;
+  String? _icon;
   String? get icon => _icon;
 
   ///Vector with IDs of DInterfaces used by DeBot.
-  late List<String>? _interfaces;
+  List<String>? _interfaces;
   List<String>? get interfaces => _interfaces;
 
   ///ABI version ("x.y") supported by DeBot
-  late String? _dabiVersion;
+  String? _dabiVersion;
   String? get dabiVersion => _dabiVersion;
   DebotInfo({
     String? name,
@@ -336,31 +336,31 @@ class DebotActivity_Transaction extends DebotActivity {
   String? get type => _type;
 
   ///External inbound message BOC.
-  late String? _msg;
+  String? _msg;
   String? get msg => _msg;
 
   ///Target smart contract address.
-  late String? _dst;
+  String? _dst;
   String? get dst => _dst;
 
   ///List of spendings as a result of transaction.
-  late List<Spending>? _out;
+  List<Spending>? _out;
   List<Spending>? get out => _out;
 
   ///Transaction total fee.
-  late BigInt? _fee;
+  BigInt? _fee;
   BigInt? get fee => _fee;
 
   ///Indicates if target smart contract updates its code.
-  late bool? _setcode;
+  bool? _setcode;
   bool? get setcode => _setcode;
 
   ///Public key from keypair that was used to sign external message.
-  late String? _signkey;
+  String? _signkey;
   String? get signkey => _signkey;
 
   ///Signing box handle used to sign external message.
-  late int? _signing_box_handle;
+  int? _signing_box_handle;
   int? get signing_box_handle => _signing_box_handle;
   DebotActivity_Transaction({
     required String msg,
@@ -463,11 +463,11 @@ class DebotActivity_Transaction extends DebotActivity {
 ///[UNSTABLE](UNSTABLE.md) [DEPRECATED](DEPRECATED.md) Describes how much funds will be debited from the target  contract balance as a result of the transaction.
 class Spending extends TonSdkStructure {
   ///Amount of nanotokens that will be sent to `dst` address.
-  late BigInt? _amount;
+  BigInt? _amount;
   BigInt? get amount => _amount;
 
   ///Destination address of recipient of funds.
-  late String? _dst;
+  String? _dst;
   String? get dst => _dst;
   Spending({
     required BigInt amount,
@@ -504,7 +504,7 @@ class Spending extends TonSdkStructure {
 ///[UNSTABLE](UNSTABLE.md) [DEPRECATED](DEPRECATED.md) Parameters to init DeBot.
 class ParamsOfInit extends TonSdkStructure {
   ///Debot smart contract address
-  late String? _address;
+  String? _address;
   String? get address => _address;
   ParamsOfInit({
     required String address,
@@ -531,15 +531,15 @@ class ParamsOfInit extends TonSdkStructure {
 ///[UNSTABLE](UNSTABLE.md) [DEPRECATED](DEPRECATED.md) Structure for storing debot handle returned from `init` function.
 class RegisteredDebot extends TonSdkStructure {
   ///Debot handle which references an instance of debot engine.
-  late int? _debot_handle;
+  int? _debot_handle;
   int? get debot_handle => _debot_handle;
 
   ///Debot abi as json string.
-  late String? _debot_abi;
+  String? _debot_abi;
   String? get debot_abi => _debot_abi;
 
   ///Debot metadata.
-  late DebotInfo? _info;
+  DebotInfo? _info;
   DebotInfo? get info => _info;
   RegisteredDebot({
     required int debot_handle,
@@ -625,7 +625,7 @@ class ParamsOfAppDebotBrowser_Log extends ParamsOfAppDebotBrowser {
   String? get type => _type;
 
   ///A string that must be printed to user.
-  late String? _msg;
+  String? _msg;
   String? get msg => _msg;
   ParamsOfAppDebotBrowser_Log({
     required String msg,
@@ -662,7 +662,7 @@ class ParamsOfAppDebotBrowser_Switch extends ParamsOfAppDebotBrowser {
   String? get type => _type;
 
   ///Debot context ID to which debot is switched.
-  late int? _context_id;
+  int? _context_id;
   int? get context_id => _context_id;
   ParamsOfAppDebotBrowser_Switch({
     required int context_id,
@@ -722,7 +722,7 @@ class ParamsOfAppDebotBrowser_ShowAction extends ParamsOfAppDebotBrowser {
   String? get type => _type;
 
   ///Debot action that must be shown to user as menu item. At least `description` property must be shown from [DebotAction] structure.
-  late DebotAction? _action;
+  DebotAction? _action;
   DebotAction? get action => _action;
   ParamsOfAppDebotBrowser_ShowAction({
     required DebotAction action,
@@ -760,7 +760,7 @@ class ParamsOfAppDebotBrowser_Input extends ParamsOfAppDebotBrowser {
   String? get type => _type;
 
   ///A prompt string that must be printed to user before input request.
-  late String? _prompt;
+  String? _prompt;
   String? get prompt => _prompt;
   ParamsOfAppDebotBrowser_Input({
     required String prompt,
@@ -820,11 +820,11 @@ class ParamsOfAppDebotBrowser_InvokeDebot extends ParamsOfAppDebotBrowser {
   String? get type => _type;
 
   ///Address of debot in blockchain.
-  late String? _debot_addr;
+  String? _debot_addr;
   String? get debot_addr => _debot_addr;
 
   ///Debot action to execute.
-  late DebotAction? _action;
+  DebotAction? _action;
   DebotAction? get action => _action;
   ParamsOfAppDebotBrowser_InvokeDebot({
     required String debot_addr,
@@ -873,7 +873,7 @@ class ParamsOfAppDebotBrowser_Send extends ParamsOfAppDebotBrowser {
   String? get type => _type;
 
   ///Message body contains interface function and parameters.
-  late String? _message;
+  String? _message;
   String? get message => _message;
   ParamsOfAppDebotBrowser_Send({
     required String message,
@@ -911,7 +911,7 @@ class ParamsOfAppDebotBrowser_Approve extends ParamsOfAppDebotBrowser {
   String? get type => _type;
 
   ///DeBot activity details.
-  late DebotActivity? _activity;
+  DebotActivity? _activity;
   DebotActivity? get activity => _activity;
   ParamsOfAppDebotBrowser_Approve({
     required DebotActivity activity,
@@ -968,7 +968,7 @@ class ResultOfAppDebotBrowser_Input extends ResultOfAppDebotBrowser {
   String? get type => _type;
 
   ///String entered by user.
-  late String? _value;
+  String? _value;
   String? get value => _value;
   ResultOfAppDebotBrowser_Input({
     required String value,
@@ -1006,7 +1006,7 @@ class ResultOfAppDebotBrowser_GetSigningBox extends ResultOfAppDebotBrowser {
   String? get type => _type;
 
   ///Signing box is owned and disposed by debot engine
-  late int? _signing_box;
+  int? _signing_box;
   int? get signing_box => _signing_box;
   ResultOfAppDebotBrowser_GetSigningBox({
     required int signing_box,
@@ -1066,7 +1066,7 @@ class ResultOfAppDebotBrowser_Approve extends ResultOfAppDebotBrowser {
   String? get type => _type;
 
   ///Indicates whether the DeBot is allowed to perform the specified operation.
-  late bool? _approved;
+  bool? _approved;
   bool? get approved => _approved;
   ResultOfAppDebotBrowser_Approve({
     required bool approved,
@@ -1101,7 +1101,7 @@ class ResultOfAppDebotBrowser_Approve extends ResultOfAppDebotBrowser {
 ///[UNSTABLE](UNSTABLE.md) [DEPRECATED](DEPRECATED.md) Parameters to start DeBot. DeBot must be already initialized with init() function.
 class ParamsOfStart extends TonSdkStructure {
   ///Debot handle which references an instance of debot engine.
-  late int? _debot_handle;
+  int? _debot_handle;
   int? get debot_handle => _debot_handle;
   ParamsOfStart({
     required int debot_handle,
@@ -1129,7 +1129,7 @@ class ParamsOfStart extends TonSdkStructure {
 ///[UNSTABLE](UNSTABLE.md) [DEPRECATED](DEPRECATED.md) Parameters to fetch DeBot metadata.
 class ParamsOfFetch extends TonSdkStructure {
   ///Debot smart contract address.
-  late String? _address;
+  String? _address;
   String? get address => _address;
   ParamsOfFetch({
     required String address,
@@ -1156,7 +1156,7 @@ class ParamsOfFetch extends TonSdkStructure {
 ///[UNSTABLE](UNSTABLE.md) [DEPRECATED](DEPRECATED.md)
 class ResultOfFetch extends TonSdkStructure {
   ///Debot metadata.
-  late DebotInfo? _info;
+  DebotInfo? _info;
   DebotInfo? get info => _info;
   ResultOfFetch({
     required DebotInfo info,
@@ -1183,11 +1183,11 @@ class ResultOfFetch extends TonSdkStructure {
 ///[UNSTABLE](UNSTABLE.md) [DEPRECATED](DEPRECATED.md) Parameters for executing debot action.
 class ParamsOfExecute extends TonSdkStructure {
   ///Debot handle which references an instance of debot engine.
-  late int? _debot_handle;
+  int? _debot_handle;
   int? get debot_handle => _debot_handle;
 
   ///Debot Action that must be executed.
-  late DebotAction? _action;
+  DebotAction? _action;
   DebotAction? get action => _action;
   ParamsOfExecute({
     required int debot_handle,
@@ -1225,11 +1225,11 @@ class ParamsOfExecute extends TonSdkStructure {
 ///[UNSTABLE](UNSTABLE.md) [DEPRECATED](DEPRECATED.md) Parameters of `send` function.
 class ParamsOfSend extends TonSdkStructure {
   ///Debot handle which references an instance of debot engine.
-  late int? _debot_handle;
+  int? _debot_handle;
   int? get debot_handle => _debot_handle;
 
   ///BOC of internal message to debot encoded in base64 format.
-  late String? _message;
+  String? _message;
   String? get message => _message;
   ParamsOfSend({
     required int debot_handle,
@@ -1267,7 +1267,7 @@ class ParamsOfSend extends TonSdkStructure {
 ///[UNSTABLE](UNSTABLE.md) [DEPRECATED](DEPRECATED.md)
 class ParamsOfRemove extends TonSdkStructure {
   ///Debot handle which references an instance of debot engine.
-  late int? _debot_handle;
+  int? _debot_handle;
   int? get debot_handle => _debot_handle;
   ParamsOfRemove({
     required int debot_handle,

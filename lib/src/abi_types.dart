@@ -82,7 +82,7 @@ abstract class Abi extends TonSdkStructure {
 class Abi_Contract extends Abi {
   late String? _type;
   String? get type => _type;
-  late AbiContract? _value;
+  AbiContract? _value;
   AbiContract? get value => _value;
   Abi_Contract({
     required AbiContract value,
@@ -116,7 +116,7 @@ class Abi_Contract extends Abi {
 class Abi_Json extends Abi {
   late String? _type;
   String? get type => _type;
-  late String? _value;
+  String? _value;
   String? get value => _value;
   Abi_Json({
     required String value,
@@ -150,7 +150,7 @@ class Abi_Json extends Abi {
 class Abi_Handle extends Abi {
   late String? _type;
   String? get type => _type;
-  late int? _value;
+  int? _value;
   int? get value => _value;
   Abi_Handle({
     required int value,
@@ -184,7 +184,7 @@ class Abi_Handle extends Abi {
 class Abi_Serialized extends Abi {
   late String? _type;
   String? get type => _type;
-  late AbiContract? _value;
+  AbiContract? _value;
   AbiContract? get value => _value;
   Abi_Serialized({
     required AbiContract value,
@@ -223,15 +223,15 @@ class Abi_Serialized extends Abi {
 class FunctionHeader extends TonSdkStructure {
   ///If not specified - calculated automatically from message_expiration_timeout(),
   ///try_index and message_expiration_timeout_grow_factor() (if ABI includes `expire` header).
-  late int? _expire;
+  int? _expire;
   int? get expire => _expire;
 
   ///If not specified, `now` is used (if ABI includes `time` header).
-  late BigInt? _time;
+  BigInt? _time;
   BigInt? get time => _time;
 
   ///Encoded in `hex`. If not specified, method fails with exception (if ABI includes `pubkey` header)..
-  late String? _pubkey;
+  String? _pubkey;
   String? get pubkey => _pubkey;
   FunctionHeader({
     int? expire,
@@ -271,17 +271,17 @@ class FunctionHeader extends TonSdkStructure {
 
 class CallSet extends TonSdkStructure {
   ///Function name that is being called. Or function id encoded as string in hex (starting with 0x).
-  late String? _function_name;
+  String? _function_name;
   String? get function_name => _function_name;
 
   ///If an application omits some header parameters required by the
   ///contract's ABI, the library will set the default values for
   ///them.
-  late FunctionHeader? _header;
+  FunctionHeader? _header;
   FunctionHeader? get header => _header;
 
   ///Function input parameters according to ABI.
-  late dynamic? _input;
+  dynamic? _input;
   dynamic? get input => _input;
   CallSet({
     required String function_name,
@@ -324,23 +324,23 @@ class CallSet extends TonSdkStructure {
 
 class DeploySet extends TonSdkStructure {
   ///Content of TVC file encoded in `base64`. For compatibility reason this field can contain an encoded  `StateInit`.
-  late String? _tvc;
+  String? _tvc;
   String? get tvc => _tvc;
 
   ///Contract code BOC encoded with base64.
-  late String? _code;
+  String? _code;
   String? get code => _code;
 
   ///State init BOC encoded with base64.
-  late String? _state_init;
+  String? _state_init;
   String? get state_init => _state_init;
 
   ///Default is `0`.
-  late int? _workchain_id;
+  int? _workchain_id;
   int? get workchain_id => _workchain_id;
 
   ///List of initial values for contract's public variables.
-  late dynamic? _initial_data;
+  dynamic? _initial_data;
   dynamic? get initial_data => _initial_data;
 
   ///Public key resolving priority:
@@ -350,7 +350,7 @@ class DeploySet extends TonSdkStructure {
   ///
   ///Applicable only for contracts with abi_spaced_version < 2.4. Contract initial public key should be
   ///explicitly provided inside `initial_data` since ABI 2.4
-  late String? _initial_pubkey;
+  String? _initial_pubkey;
   String? get initial_pubkey => _initial_pubkey;
   DeploySet({
     String? tvc,
@@ -456,7 +456,7 @@ class Signer_None extends Signer {
 class Signer_External extends Signer {
   late String? _type;
   String? get type => _type;
-  late String? _public_key;
+  String? _public_key;
   String? get public_key => _public_key;
   Signer_External({
     required String public_key,
@@ -492,7 +492,7 @@ class Signer_External extends Signer {
 class Signer_Keys extends Signer {
   late String? _type;
   String? get type => _type;
-  late KeyPair? _keys;
+  KeyPair? _keys;
   KeyPair? get keys => _keys;
   Signer_Keys({
     required KeyPair keys,
@@ -527,7 +527,7 @@ class Signer_Keys extends Signer {
 class Signer_SigningBox extends Signer {
   late String? _type;
   String? get type => _type;
-  late int? _handle;
+  int? _handle;
   int? get handle => _handle;
   Signer_SigningBox({
     required int handle,
@@ -593,13 +593,13 @@ class MessageBodyType {
 }
 
 class AbiParam extends TonSdkStructure {
-  late String? _name;
+  String? _name;
   String? get name => _name;
-  late String? _type;
+  String? _type;
   String? get type => _type;
-  late List<AbiParam>? _components;
+  List<AbiParam>? _components;
   List<AbiParam>? get components => _components;
-  late bool? _init;
+  bool? _init;
   bool? get init => _init;
   AbiParam({
     required String name,
@@ -655,11 +655,11 @@ class AbiParam extends TonSdkStructure {
 }
 
 class AbiEvent extends TonSdkStructure {
-  late String? _name;
+  String? _name;
   String? get name => _name;
-  late List<AbiParam>? _inputs;
+  List<AbiParam>? _inputs;
   List<AbiParam>? get inputs => _inputs;
-  late String? _id;
+  String? _id;
   String? get id => _id;
   AbiEvent({
     required String name,
@@ -707,13 +707,13 @@ class AbiEvent extends TonSdkStructure {
 }
 
 class AbiData extends TonSdkStructure {
-  late int? _key;
+  int? _key;
   int? get key => _key;
-  late String? _name;
+  String? _name;
   String? get name => _name;
-  late String? _type;
+  String? _type;
   String? get type => _type;
-  late List<AbiParam>? _components;
+  List<AbiParam>? _components;
   List<AbiParam>? get components => _components;
   AbiData({
     required int key,
@@ -771,13 +771,13 @@ class AbiData extends TonSdkStructure {
 }
 
 class AbiFunction extends TonSdkStructure {
-  late String? _name;
+  String? _name;
   String? get name => _name;
-  late List<AbiParam>? _inputs;
+  List<AbiParam>? _inputs;
   List<AbiParam>? get inputs => _inputs;
-  late List<AbiParam>? _outputs;
+  List<AbiParam>? _outputs;
   List<AbiParam>? get outputs => _outputs;
-  late String? _id;
+  String? _id;
   String? get id => _id;
   AbiFunction({
     required String name,
@@ -840,21 +840,21 @@ class AbiFunction extends TonSdkStructure {
 }
 
 class AbiContract extends TonSdkStructure {
-  late int? _abi_spaced_version;
+  int? _abi_spaced_version;
   int? get abi_spaced_version => _abi_spaced_version;
-  late int? _abi_version;
+  int? _abi_version;
   int? get abi_version => _abi_version;
-  late String? _version;
+  String? _version;
   String? get version => _version;
-  late List<String>? _header;
+  List<String>? _header;
   List<String>? get header => _header;
-  late List<AbiFunction>? _functions;
+  List<AbiFunction>? _functions;
   List<AbiFunction>? get functions => _functions;
-  late List<AbiEvent>? _events;
+  List<AbiEvent>? _events;
   List<AbiEvent>? get events => _events;
-  late List<AbiData>? _data;
+  List<AbiData>? _data;
   List<AbiData>? get data => _data;
-  late List<AbiParam>? _fields;
+  List<AbiParam>? _fields;
   List<AbiParam>? get fields => _fields;
   AbiContract({
     int? abi_spaced_version,
@@ -982,21 +982,21 @@ class DataLayout {
 
 class ParamsOfEncodeMessageBody extends TonSdkStructure {
   ///Contract ABI.
-  late Abi? _abi;
+  Abi? _abi;
   Abi? get abi => _abi;
 
   ///Must be specified in non deploy message.
   ///
   ///In case of deploy message contains parameters of constructor.
-  late CallSet? _call_set;
+  CallSet? _call_set;
   CallSet? get call_set => _call_set;
 
   ///True if internal message body must be encoded.
-  late bool? _is_internal;
+  bool? _is_internal;
   bool? get is_internal => _is_internal;
 
   ///Signing parameters.
-  late Signer? _signer;
+  Signer? _signer;
   Signer? get signer => _signer;
 
   ///Used in message processing with retries.
@@ -1007,17 +1007,17 @@ class ParamsOfEncodeMessageBody extends TonSdkStructure {
   ///Expiration timeouts will grow with every retry.
   ///
   ///Default value is 0.
-  late int? _processing_try_index;
+  int? _processing_try_index;
   int? get processing_try_index => _processing_try_index;
 
   ///Since abi_spaced_version 2.3 destination address of external inbound message is used in message
   ///body signature calculation. Should be provided when signed external inbound message body is
   ///created. Otherwise can be omitted.
-  late String? _address;
+  String? _address;
   String? get address => _address;
 
   ///Signature ID to be used in data to sign preparing when CapSignatureWithId capability is enabled
-  late int? _signature_id;
+  int? _signature_id;
   int? get signature_id => _signature_id;
   ParamsOfEncodeMessageBody({
     required Abi abi,
@@ -1101,14 +1101,14 @@ class ParamsOfEncodeMessageBody extends TonSdkStructure {
 
 class ResultOfEncodeMessageBody extends TonSdkStructure {
   ///Message body BOC encoded with `base64`.
-  late String? _body;
+  String? _body;
   String? get body => _body;
 
   ///Encoded with `base64`.
   ///Presents when `message` is unsigned. Can be used for external
   ///message signing. Is this case you need to sing this data and
   ///produce signed message using `abi.attach_signature`.
-  late String? _data_to_sign;
+  String? _data_to_sign;
   String? get data_to_sign => _data_to_sign;
   ResultOfEncodeMessageBody({
     required String body,
@@ -1142,19 +1142,19 @@ class ResultOfEncodeMessageBody extends TonSdkStructure {
 
 class ParamsOfAttachSignatureToMessageBody extends TonSdkStructure {
   ///Contract ABI
-  late Abi? _abi;
+  Abi? _abi;
   Abi? get abi => _abi;
 
   ///Must be encoded with `hex`.
-  late String? _public_key;
+  String? _public_key;
   String? get public_key => _public_key;
 
   ///Must be encoded with `base64`.
-  late String? _message;
+  String? _message;
   String? get message => _message;
 
   ///Must be encoded with `hex`.
-  late String? _signature;
+  String? _signature;
   String? get signature => _signature;
   ParamsOfAttachSignatureToMessageBody({
     required Abi abi,
@@ -1213,7 +1213,7 @@ class ParamsOfAttachSignatureToMessageBody extends TonSdkStructure {
 }
 
 class ResultOfAttachSignatureToMessageBody extends TonSdkStructure {
-  late String? _body;
+  String? _body;
   String? get body => _body;
   ResultOfAttachSignatureToMessageBody({
     required String body,
@@ -1240,26 +1240,26 @@ class ResultOfAttachSignatureToMessageBody extends TonSdkStructure {
 
 class ParamsOfEncodeMessage extends TonSdkStructure {
   ///Contract ABI.
-  late Abi? _abi;
+  Abi? _abi;
   Abi? get abi => _abi;
 
   ///Must be specified in case of non-deploy message.
-  late String? _address;
+  String? _address;
   String? get address => _address;
 
   ///Must be specified in case of deploy message.
-  late DeploySet? _deploy_set;
+  DeploySet? _deploy_set;
   DeploySet? get deploy_set => _deploy_set;
 
   ///Must be specified in case of non-deploy message.
   ///
   ///In case of deploy message it is optional and contains parameters
   ///of the functions that will to be called upon deploy transaction.
-  late CallSet? _call_set;
+  CallSet? _call_set;
   CallSet? get call_set => _call_set;
 
   ///Signing parameters.
-  late Signer? _signer;
+  Signer? _signer;
   Signer? get signer => _signer;
 
   ///Used in message processing with retries (if contract's ABI includes "expire" header).
@@ -1273,11 +1273,11 @@ class ParamsOfEncodeMessage extends TonSdkStructure {
   ///<.....add config parameter with default value here>
   ///
   ///Default value is 0.
-  late int? _processing_try_index;
+  int? _processing_try_index;
   int? get processing_try_index => _processing_try_index;
 
   ///Signature ID to be used in data to sign preparing when CapSignatureWithId capability is enabled
-  late int? _signature_id;
+  int? _signature_id;
   int? get signature_id => _signature_id;
   ParamsOfEncodeMessage({
     required Abi abi,
@@ -1355,21 +1355,21 @@ class ParamsOfEncodeMessage extends TonSdkStructure {
 
 class ResultOfEncodeMessage extends TonSdkStructure {
   ///Message BOC encoded with `base64`.
-  late String? _message;
+  String? _message;
   String? get message => _message;
 
   ///Returned in case of `Signer::External`. Can be used for external
   ///message signing. Is this case you need to use this data to create signature and
   ///then produce signed message using `abi.attach_signature`.
-  late String? _data_to_sign;
+  String? _data_to_sign;
   String? get data_to_sign => _data_to_sign;
 
   ///Destination address.
-  late String? _address;
+  String? _address;
   String? get address => _address;
 
   ///Message id.
-  late String? _message_id;
+  String? _message_id;
   String? get message_id => _message_id;
   ResultOfEncodeMessage({
     required String message,
@@ -1426,38 +1426,38 @@ class ResultOfEncodeMessage extends TonSdkStructure {
 
 class ParamsOfEncodeInternalMessage extends TonSdkStructure {
   ///Can be None if both deploy_set and call_set are None.
-  late Abi? _abi;
+  Abi? _abi;
   Abi? get abi => _abi;
 
   ///Must be specified in case of non-deploy message.
-  late String? _address;
+  String? _address;
   String? get address => _address;
 
   ///Source address of the message.
-  late String? _src_address;
+  String? _src_address;
   String? get src_address => _src_address;
 
   ///Must be specified in case of deploy message.
-  late DeploySet? _deploy_set;
+  DeploySet? _deploy_set;
   DeploySet? get deploy_set => _deploy_set;
 
   ///Must be specified in case of non-deploy message.
   ///
   ///In case of deploy message it is optional and contains parameters
   ///of the functions that will to be called upon deploy transaction.
-  late CallSet? _call_set;
+  CallSet? _call_set;
   CallSet? get call_set => _call_set;
 
   ///Value in nanotokens to be sent with message.
-  late String? _value;
+  String? _value;
   String? get value => _value;
 
   ///Default is true.
-  late bool? _bounce;
+  bool? _bounce;
   bool? get bounce => _bounce;
 
   ///Default is false.
-  late bool? _enable_ihr;
+  bool? _enable_ihr;
   bool? get enable_ihr => _enable_ihr;
   ParamsOfEncodeInternalMessage({
     Abi? abi,
@@ -1540,15 +1540,15 @@ class ParamsOfEncodeInternalMessage extends TonSdkStructure {
 
 class ResultOfEncodeInternalMessage extends TonSdkStructure {
   ///Message BOC encoded with `base64`.
-  late String? _message;
+  String? _message;
   String? get message => _message;
 
   ///Destination address.
-  late String? _address;
+  String? _address;
   String? get address => _address;
 
   ///Message id.
-  late String? _message_id;
+  String? _message_id;
   String? get message_id => _message_id;
   ResultOfEncodeInternalMessage({
     required String message,
@@ -1597,19 +1597,19 @@ class ResultOfEncodeInternalMessage extends TonSdkStructure {
 
 class ParamsOfAttachSignature extends TonSdkStructure {
   ///Contract ABI
-  late Abi? _abi;
+  Abi? _abi;
   Abi? get abi => _abi;
 
   ///Public key encoded in `hex`.
-  late String? _public_key;
+  String? _public_key;
   String? get public_key => _public_key;
 
   ///Unsigned message BOC encoded in `base64`.
-  late String? _message;
+  String? _message;
   String? get message => _message;
 
   ///Signature encoded in `hex`.
-  late String? _signature;
+  String? _signature;
   String? get signature => _signature;
   ParamsOfAttachSignature({
     required Abi abi,
@@ -1668,11 +1668,11 @@ class ParamsOfAttachSignature extends TonSdkStructure {
 
 class ResultOfAttachSignature extends TonSdkStructure {
   ///Signed message BOC
-  late String? _message;
+  String? _message;
   String? get message => _message;
 
   ///Message ID
-  late String? _message_id;
+  String? _message_id;
   String? get message_id => _message_id;
   ResultOfAttachSignature({
     required String message,
@@ -1710,21 +1710,21 @@ class ResultOfAttachSignature extends TonSdkStructure {
 
 class ParamsOfDecodeMessage extends TonSdkStructure {
   ///contract ABI
-  late Abi? _abi;
+  Abi? _abi;
   Abi? get abi => _abi;
 
   ///Message BOC
-  late String? _message;
+  String? _message;
   String? get message => _message;
 
   ///Flag allowing partial BOC decoding when ABI doesn't describe the full body BOC. Controls decoder behaviour when after decoding all described in ABI params there are some data left in BOC: `true` - return decoded values `false` - return error of incomplete BOC deserialization (default)
-  late bool? _allow_partial;
+  bool? _allow_partial;
   bool? get allow_partial => _allow_partial;
 
   ///Function name or function id if is known in advance
-  late String? _function_name;
+  String? _function_name;
   String? get function_name => _function_name;
-  late DataLayout? _data_layout;
+  DataLayout? _data_layout;
   DataLayout? get data_layout => _data_layout;
   ParamsOfDecodeMessage({
     required Abi abi,
@@ -1785,19 +1785,19 @@ class ParamsOfDecodeMessage extends TonSdkStructure {
 
 class DecodedMessageBody extends TonSdkStructure {
   ///Type of the message body content.
-  late MessageBodyType? _body_type;
+  MessageBodyType? _body_type;
   MessageBodyType? get body_type => _body_type;
 
   ///Function or event name.
-  late String? _name;
+  String? _name;
   String? get name => _name;
 
   ///Parameters or result value.
-  late dynamic? _value;
+  dynamic? _value;
   dynamic? get value => _value;
 
   ///Function header.
-  late FunctionHeader? _header;
+  FunctionHeader? _header;
   FunctionHeader? get header => _header;
   DecodedMessageBody({
     required MessageBodyType body_type,
@@ -1850,25 +1850,25 @@ class DecodedMessageBody extends TonSdkStructure {
 
 class ParamsOfDecodeMessageBody extends TonSdkStructure {
   ///Contract ABI used to decode.
-  late Abi? _abi;
+  Abi? _abi;
   Abi? get abi => _abi;
 
   ///Message body BOC encoded in `base64`.
-  late String? _body;
+  String? _body;
   String? get body => _body;
 
   ///True if the body belongs to the internal message.
-  late bool? _is_internal;
+  bool? _is_internal;
   bool? get is_internal => _is_internal;
 
   ///Flag allowing partial BOC decoding when ABI doesn't describe the full body BOC. Controls decoder behaviour when after decoding all described in ABI params there are some data left in BOC: `true` - return decoded values `false` - return error of incomplete BOC deserialization (default)
-  late bool? _allow_partial;
+  bool? _allow_partial;
   bool? get allow_partial => _allow_partial;
 
   ///Function name or function id if is known in advance
-  late String? _function_name;
+  String? _function_name;
   String? get function_name => _function_name;
-  late DataLayout? _data_layout;
+  DataLayout? _data_layout;
   DataLayout? get data_layout => _data_layout;
   ParamsOfDecodeMessageBody({
     required Abi abi,
@@ -1939,23 +1939,23 @@ class ParamsOfDecodeMessageBody extends TonSdkStructure {
 
 class ParamsOfEncodeAccount extends TonSdkStructure {
   ///Account state init.
-  late String? _state_init;
+  String? _state_init;
   String? get state_init => _state_init;
 
   ///Initial balance.
-  late BigInt? _balance;
+  BigInt? _balance;
   BigInt? get balance => _balance;
 
   ///Initial value for the `last_trans_lt`.
-  late BigInt? _last_trans_lt;
+  BigInt? _last_trans_lt;
   BigInt? get last_trans_lt => _last_trans_lt;
 
   ///Initial value for the `last_paid`.
-  late int? _last_paid;
+  int? _last_paid;
   int? get last_paid => _last_paid;
 
   ///The BOC itself returned if no cache type provided
-  late BocCacheType? _boc_cache;
+  BocCacheType? _boc_cache;
   BocCacheType? get boc_cache => _boc_cache;
   ParamsOfEncodeAccount({
     required String state_init,
@@ -2014,11 +2014,11 @@ class ParamsOfEncodeAccount extends TonSdkStructure {
 
 class ResultOfEncodeAccount extends TonSdkStructure {
   ///Account BOC encoded in `base64`.
-  late String? _account;
+  String? _account;
   String? get account => _account;
 
   ///Account ID  encoded in `hex`.
-  late String? _id;
+  String? _id;
   String? get id => _id;
   ResultOfEncodeAccount({
     required String account,
@@ -2055,15 +2055,15 @@ class ResultOfEncodeAccount extends TonSdkStructure {
 
 class ParamsOfDecodeAccountData extends TonSdkStructure {
   ///Contract ABI
-  late Abi? _abi;
+  Abi? _abi;
   Abi? get abi => _abi;
 
   ///Data BOC or BOC handle
-  late String? _data;
+  String? _data;
   String? get data => _data;
 
   ///Flag allowing partial BOC decoding when ABI doesn't describe the full body BOC. Controls decoder behaviour when after decoding all described in ABI params there are some data left in BOC: `true` - return decoded values `false` - return error of incomplete BOC deserialization (default)
-  late bool? _allow_partial;
+  bool? _allow_partial;
   bool? get allow_partial => _allow_partial;
   ParamsOfDecodeAccountData({
     required Abi abi,
@@ -2107,7 +2107,7 @@ class ParamsOfDecodeAccountData extends TonSdkStructure {
 
 class ResultOfDecodeAccountData extends TonSdkStructure {
   ///Decoded data as a JSON structure.
-  late dynamic? _data;
+  dynamic? _data;
   dynamic? get data => _data;
   ResultOfDecodeAccountData({
     required dynamic data,
@@ -2133,23 +2133,23 @@ class ResultOfDecodeAccountData extends TonSdkStructure {
 
 class ParamsOfUpdateInitialData extends TonSdkStructure {
   ///Contract ABI
-  late Abi? _abi;
+  Abi? _abi;
   Abi? get abi => _abi;
 
   ///Data BOC or BOC handle
-  late String? _data;
+  String? _data;
   String? get data => _data;
 
   ///`abi` parameter should be provided to set initial data
-  late dynamic? _initial_data;
+  dynamic? _initial_data;
   dynamic? get initial_data => _initial_data;
 
   ///Initial account owner's public key to set into account data
-  late String? _initial_pubkey;
+  String? _initial_pubkey;
   String? get initial_pubkey => _initial_pubkey;
 
   ///Cache type to put the result. The BOC itself returned if no cache type provided.
-  late BocCacheType? _boc_cache;
+  BocCacheType? _boc_cache;
   BocCacheType? get boc_cache => _boc_cache;
   ParamsOfUpdateInitialData({
     required Abi abi,
@@ -2209,7 +2209,7 @@ class ParamsOfUpdateInitialData extends TonSdkStructure {
 
 class ResultOfUpdateInitialData extends TonSdkStructure {
   ///Updated data BOC or BOC handle
-  late String? _data;
+  String? _data;
   String? get data => _data;
   ResultOfUpdateInitialData({
     required String data,
@@ -2235,19 +2235,19 @@ class ResultOfUpdateInitialData extends TonSdkStructure {
 
 class ParamsOfEncodeInitialData extends TonSdkStructure {
   ///Contract ABI
-  late Abi? _abi;
+  Abi? _abi;
   Abi? get abi => _abi;
 
   ///`abi` parameter should be provided to set initial data
-  late dynamic? _initial_data;
+  dynamic? _initial_data;
   dynamic? get initial_data => _initial_data;
 
   ///Initial account owner's public key to set into account data
-  late String? _initial_pubkey;
+  String? _initial_pubkey;
   String? get initial_pubkey => _initial_pubkey;
 
   ///Cache type to put the result. The BOC itself returned if no cache type provided.
-  late BocCacheType? _boc_cache;
+  BocCacheType? _boc_cache;
   BocCacheType? get boc_cache => _boc_cache;
   ParamsOfEncodeInitialData({
     required Abi abi,
@@ -2297,7 +2297,7 @@ class ParamsOfEncodeInitialData extends TonSdkStructure {
 
 class ResultOfEncodeInitialData extends TonSdkStructure {
   ///Updated data BOC or BOC handle
-  late String? _data;
+  String? _data;
   String? get data => _data;
   ResultOfEncodeInitialData({
     required String data,
@@ -2323,15 +2323,15 @@ class ResultOfEncodeInitialData extends TonSdkStructure {
 
 class ParamsOfDecodeInitialData extends TonSdkStructure {
   ///Initial data is decoded if this parameter is provided
-  late Abi? _abi;
+  Abi? _abi;
   Abi? get abi => _abi;
 
   ///Data BOC or BOC handle
-  late String? _data;
+  String? _data;
   String? get data => _data;
 
   ///Flag allowing partial BOC decoding when ABI doesn't describe the full body BOC. Controls decoder behaviour when after decoding all described in ABI params there are some data left in BOC: `true` - return decoded values `false` - return error of incomplete BOC deserialization (default)
-  late bool? _allow_partial;
+  bool? _allow_partial;
   bool? get allow_partial => _allow_partial;
   ParamsOfDecodeInitialData({
     required Abi abi,
@@ -2375,11 +2375,11 @@ class ParamsOfDecodeInitialData extends TonSdkStructure {
 
 class ResultOfDecodeInitialData extends TonSdkStructure {
   ///Initial data is decoded if `abi` input parameter is provided
-  late dynamic? _initial_data;
+  dynamic? _initial_data;
   dynamic? get initial_data => _initial_data;
 
   ///Initial account owner's public key
-  late String? _initial_pubkey;
+  String? _initial_pubkey;
   String? get initial_pubkey => _initial_pubkey;
   ResultOfDecodeInitialData({
     required dynamic initial_data,
@@ -2417,13 +2417,13 @@ class ResultOfDecodeInitialData extends TonSdkStructure {
 
 class ParamsOfDecodeBoc extends TonSdkStructure {
   ///Parameters to decode from BOC
-  late List<AbiParam>? _params;
+  List<AbiParam>? _params;
   List<AbiParam>? get params => _params;
 
   ///Data BOC or BOC handle
-  late String? _boc;
+  String? _boc;
   String? get boc => _boc;
-  late bool? _allow_partial;
+  bool? _allow_partial;
   bool? get allow_partial => _allow_partial;
   ParamsOfDecodeBoc({
     required List<AbiParam> params,
@@ -2475,7 +2475,7 @@ class ParamsOfDecodeBoc extends TonSdkStructure {
 
 class ResultOfDecodeBoc extends TonSdkStructure {
   ///Decoded data as a JSON structure.
-  late dynamic? _data;
+  dynamic? _data;
   dynamic? get data => _data;
   ResultOfDecodeBoc({
     required dynamic data,
@@ -2501,15 +2501,15 @@ class ResultOfDecodeBoc extends TonSdkStructure {
 
 class ParamsOfAbiEncodeBoc extends TonSdkStructure {
   ///Parameters to encode into BOC
-  late List<AbiParam>? _params;
+  List<AbiParam>? _params;
   List<AbiParam>? get params => _params;
 
   ///Parameters and values as a JSON structure
-  late dynamic? _data;
+  dynamic? _data;
   dynamic? get data => _data;
 
   ///The BOC itself returned if no cache type provided
-  late BocCacheType? _boc_cache;
+  BocCacheType? _boc_cache;
   BocCacheType? get boc_cache => _boc_cache;
   ParamsOfAbiEncodeBoc({
     required List<AbiParam> params,
@@ -2558,7 +2558,7 @@ class ParamsOfAbiEncodeBoc extends TonSdkStructure {
 
 class ResultOfAbiEncodeBoc extends TonSdkStructure {
   ///BOC encoded as base64
-  late String? _boc;
+  String? _boc;
   String? get boc => _boc;
   ResultOfAbiEncodeBoc({
     required String boc,
@@ -2584,15 +2584,15 @@ class ResultOfAbiEncodeBoc extends TonSdkStructure {
 
 class ParamsOfCalcFunctionId extends TonSdkStructure {
   ///Contract ABI.
-  late Abi? _abi;
+  Abi? _abi;
   Abi? get abi => _abi;
 
   ///Contract function name
-  late String? _function_name;
+  String? _function_name;
   String? get function_name => _function_name;
 
   ///If set to `true` output function ID will be returned which is used in contract response. Default is `false`
-  late bool? _output;
+  bool? _output;
   bool? get output => _output;
   ParamsOfCalcFunctionId({
     required Abi abi,
@@ -2637,7 +2637,7 @@ class ParamsOfCalcFunctionId extends TonSdkStructure {
 
 class ResultOfCalcFunctionId extends TonSdkStructure {
   ///Contract function ID
-  late int? _function_id;
+  int? _function_id;
   int? get function_id => _function_id;
   ResultOfCalcFunctionId({
     required int function_id,
@@ -2664,15 +2664,15 @@ class ResultOfCalcFunctionId extends TonSdkStructure {
 
 class ParamsOfGetSignatureData extends TonSdkStructure {
   ///Contract ABI used to decode.
-  late Abi? _abi;
+  Abi? _abi;
   Abi? get abi => _abi;
 
   ///Message BOC encoded in `base64`.
-  late String? _message;
+  String? _message;
   String? get message => _message;
 
   ///Signature ID to be used in unsigned data preparing when CapSignatureWithId capability is enabled
-  late int? _signature_id;
+  int? _signature_id;
   int? get signature_id => _signature_id;
   ParamsOfGetSignatureData({
     required Abi abi,
@@ -2717,11 +2717,11 @@ class ParamsOfGetSignatureData extends TonSdkStructure {
 
 class ResultOfGetSignatureData extends TonSdkStructure {
   ///Signature from the message in `hex`.
-  late String? _signature;
+  String? _signature;
   String? get signature => _signature;
 
   ///Data to verify the signature in `base64`.
-  late String? _unsigned;
+  String? _unsigned;
   String? get unsigned => _unsigned;
   ResultOfGetSignatureData({
     required String signature,

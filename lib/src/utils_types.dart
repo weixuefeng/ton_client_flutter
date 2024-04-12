@@ -60,11 +60,11 @@ class AddressStringFormat_Hex extends AddressStringFormat {
 class AddressStringFormat_Base64 extends AddressStringFormat {
   late String? _type;
   String? get type => _type;
-  late bool? _url;
+  bool? _url;
   bool? get url => _url;
-  late bool? _test;
+  bool? _test;
   bool? get test => _test;
-  late bool? _bounce;
+  bool? _bounce;
   bool? get bounce => _bounce;
   AddressStringFormat_Base64({
     required bool url,
@@ -140,11 +140,11 @@ class AccountAddressType {
 
 class ParamsOfConvertAddress extends TonSdkStructure {
   ///Account address in any TON format.
-  late String? _address;
+  String? _address;
   String? get address => _address;
 
   ///Specify the format to convert to.
-  late AddressStringFormat? _output_format;
+  AddressStringFormat? _output_format;
   AddressStringFormat? get output_format => _output_format;
   ParamsOfConvertAddress({
     required String address,
@@ -182,7 +182,7 @@ class ParamsOfConvertAddress extends TonSdkStructure {
 
 class ResultOfConvertAddress extends TonSdkStructure {
   ///Address in the specified format
-  late String? _address;
+  String? _address;
   String? get address => _address;
   ResultOfConvertAddress({
     required String address,
@@ -209,7 +209,7 @@ class ResultOfConvertAddress extends TonSdkStructure {
 
 class ParamsOfGetAddressType extends TonSdkStructure {
   ///Account address in any TON format.
-  late String? _address;
+  String? _address;
   String? get address => _address;
   ParamsOfGetAddressType({
     required String address,
@@ -236,7 +236,7 @@ class ParamsOfGetAddressType extends TonSdkStructure {
 
 class ResultOfGetAddressType extends TonSdkStructure {
   ///Account address type.
-  late AccountAddressType? _address_type;
+  AccountAddressType? _address_type;
   AccountAddressType? get address_type => _address_type;
   ResultOfGetAddressType({
     required AccountAddressType address_type,
@@ -262,9 +262,9 @@ class ResultOfGetAddressType extends TonSdkStructure {
 }
 
 class ParamsOfCalcStorageFee extends TonSdkStructure {
-  late String? _account;
+  String? _account;
   String? get account => _account;
-  late int? _period;
+  int? _period;
   int? get period => _period;
   ParamsOfCalcStorageFee({
     required String account,
@@ -301,7 +301,7 @@ class ParamsOfCalcStorageFee extends TonSdkStructure {
 }
 
 class ResultOfCalcStorageFee extends TonSdkStructure {
-  late String? _fee;
+  String? _fee;
   String? get fee => _fee;
   ResultOfCalcStorageFee({
     required String fee,
@@ -327,11 +327,11 @@ class ResultOfCalcStorageFee extends TonSdkStructure {
 
 class ParamsOfCompressZstd extends TonSdkStructure {
   ///Must be encoded as base64.
-  late String? _uncompressed;
+  String? _uncompressed;
   String? get uncompressed => _uncompressed;
 
   ///Compression level, from 1 to 21. Where: 1 - lowest compression level (fastest compression); 21 - highest compression level (slowest compression). If level is omitted, the default compression level is used (currently `3`).
-  late int? _level;
+  int? _level;
   int? get level => _level;
   ParamsOfCompressZstd({
     required String uncompressed,
@@ -366,7 +366,7 @@ class ParamsOfCompressZstd extends TonSdkStructure {
 
 class ResultOfCompressZstd extends TonSdkStructure {
   ///Must be encoded as base64.
-  late String? _compressed;
+  String? _compressed;
   String? get compressed => _compressed;
   ResultOfCompressZstd({
     required String compressed,
@@ -393,7 +393,7 @@ class ResultOfCompressZstd extends TonSdkStructure {
 
 class ParamsOfDecompressZstd extends TonSdkStructure {
   ///Must be encoded as base64.
-  late String? _compressed;
+  String? _compressed;
   String? get compressed => _compressed;
   ParamsOfDecompressZstd({
     required String compressed,
@@ -420,7 +420,7 @@ class ParamsOfDecompressZstd extends TonSdkStructure {
 
 class ResultOfDecompressZstd extends TonSdkStructure {
   ///Must be encoded as base64.
-  late String? _decompressed;
+  String? _decompressed;
   String? get decompressed => _decompressed;
   ResultOfDecompressZstd({
     required String decompressed,

@@ -110,9 +110,9 @@ abstract class ProcessingEvent extends TonSdkStructure {
 class ProcessingEvent_WillFetchFirstBlock extends ProcessingEvent {
   late String? _type;
   String? get type => _type;
-  late String? _message_id;
+  String? _message_id;
   String? get message_id => _message_id;
-  late String? _message_dst;
+  String? _message_dst;
   String? get message_dst => _message_dst;
   ProcessingEvent_WillFetchFirstBlock({
     required String message_id,
@@ -161,11 +161,11 @@ class ProcessingEvent_WillFetchFirstBlock extends ProcessingEvent {
 class ProcessingEvent_FetchFirstBlockFailed extends ProcessingEvent {
   late String? _type;
   String? get type => _type;
-  late ClientError? _error;
+  ClientError? _error;
   ClientError? get error => _error;
-  late String? _message_id;
+  String? _message_id;
   String? get message_id => _message_id;
-  late String? _message_dst;
+  String? _message_dst;
   String? get message_dst => _message_dst;
   ProcessingEvent_FetchFirstBlockFailed({
     required ClientError error,
@@ -223,13 +223,13 @@ class ProcessingEvent_FetchFirstBlockFailed extends ProcessingEvent {
 class ProcessingEvent_WillSend extends ProcessingEvent {
   late String? _type;
   String? get type => _type;
-  late String? _shard_block_id;
+  String? _shard_block_id;
   String? get shard_block_id => _shard_block_id;
-  late String? _message_id;
+  String? _message_id;
   String? get message_id => _message_id;
-  late String? _message_dst;
+  String? _message_dst;
   String? get message_dst => _message_dst;
-  late String? _message;
+  String? _message;
   String? get message => _message;
   ProcessingEvent_WillSend({
     required String shard_block_id,
@@ -298,13 +298,13 @@ class ProcessingEvent_WillSend extends ProcessingEvent {
 class ProcessingEvent_DidSend extends ProcessingEvent {
   late String? _type;
   String? get type => _type;
-  late String? _shard_block_id;
+  String? _shard_block_id;
   String? get shard_block_id => _shard_block_id;
-  late String? _message_id;
+  String? _message_id;
   String? get message_id => _message_id;
-  late String? _message_dst;
+  String? _message_dst;
   String? get message_dst => _message_dst;
-  late String? _message;
+  String? _message;
   String? get message => _message;
   ProcessingEvent_DidSend({
     required String shard_block_id,
@@ -379,15 +379,15 @@ class ProcessingEvent_DidSend extends ProcessingEvent {
 class ProcessingEvent_SendFailed extends ProcessingEvent {
   late String? _type;
   String? get type => _type;
-  late String? _shard_block_id;
+  String? _shard_block_id;
   String? get shard_block_id => _shard_block_id;
-  late String? _message_id;
+  String? _message_id;
   String? get message_id => _message_id;
-  late String? _message_dst;
+  String? _message_dst;
   String? get message_dst => _message_dst;
-  late String? _message;
+  String? _message;
   String? get message => _message;
-  late ClientError? _error;
+  ClientError? _error;
   ClientError? get error => _error;
   ProcessingEvent_SendFailed({
     required String shard_block_id,
@@ -472,13 +472,13 @@ class ProcessingEvent_SendFailed extends ProcessingEvent {
 class ProcessingEvent_WillFetchNextBlock extends ProcessingEvent {
   late String? _type;
   String? get type => _type;
-  late String? _shard_block_id;
+  String? _shard_block_id;
   String? get shard_block_id => _shard_block_id;
-  late String? _message_id;
+  String? _message_id;
   String? get message_id => _message_id;
-  late String? _message_dst;
+  String? _message_dst;
   String? get message_dst => _message_dst;
-  late String? _message;
+  String? _message;
   String? get message => _message;
   ProcessingEvent_WillFetchNextBlock({
     required String shard_block_id,
@@ -552,15 +552,15 @@ class ProcessingEvent_WillFetchNextBlock extends ProcessingEvent {
 class ProcessingEvent_FetchNextBlockFailed extends ProcessingEvent {
   late String? _type;
   String? get type => _type;
-  late String? _shard_block_id;
+  String? _shard_block_id;
   String? get shard_block_id => _shard_block_id;
-  late String? _message_id;
+  String? _message_id;
   String? get message_id => _message_id;
-  late String? _message_dst;
+  String? _message_dst;
   String? get message_dst => _message_dst;
-  late String? _message;
+  String? _message;
   String? get message => _message;
-  late ClientError? _error;
+  ClientError? _error;
   ClientError? get error => _error;
   ProcessingEvent_FetchNextBlockFailed({
     required String shard_block_id,
@@ -645,13 +645,13 @@ class ProcessingEvent_FetchNextBlockFailed extends ProcessingEvent {
 class ProcessingEvent_MessageExpired extends ProcessingEvent {
   late String? _type;
   String? get type => _type;
-  late String? _message_id;
+  String? _message_id;
   String? get message_id => _message_id;
-  late String? _message_dst;
+  String? _message_dst;
   String? get message_dst => _message_dst;
-  late String? _message;
+  String? _message;
   String? get message => _message;
-  late ClientError? _error;
+  ClientError? _error;
   ClientError? get error => _error;
   ProcessingEvent_MessageExpired({
     required String message_id,
@@ -720,13 +720,13 @@ class ProcessingEvent_MessageExpired extends ProcessingEvent {
 class ProcessingEvent_RempSentToValidators extends ProcessingEvent {
   late String? _type;
   String? get type => _type;
-  late String? _message_id;
+  String? _message_id;
   String? get message_id => _message_id;
-  late String? _message_dst;
+  String? _message_dst;
   String? get message_dst => _message_dst;
-  late BigInt? _timestamp;
+  BigInt? _timestamp;
   BigInt? get timestamp => _timestamp;
-  late dynamic? _json;
+  dynamic? _json;
   dynamic? get json => _json;
   ProcessingEvent_RempSentToValidators({
     required String message_id,
@@ -795,13 +795,13 @@ class ProcessingEvent_RempSentToValidators extends ProcessingEvent {
 class ProcessingEvent_RempIncludedIntoBlock extends ProcessingEvent {
   late String? _type;
   String? get type => _type;
-  late String? _message_id;
+  String? _message_id;
   String? get message_id => _message_id;
-  late String? _message_dst;
+  String? _message_dst;
   String? get message_dst => _message_dst;
-  late BigInt? _timestamp;
+  BigInt? _timestamp;
   BigInt? get timestamp => _timestamp;
-  late dynamic? _json;
+  dynamic? _json;
   dynamic? get json => _json;
   ProcessingEvent_RempIncludedIntoBlock({
     required String message_id,
@@ -870,13 +870,13 @@ class ProcessingEvent_RempIncludedIntoBlock extends ProcessingEvent {
 class ProcessingEvent_RempIncludedIntoAcceptedBlock extends ProcessingEvent {
   late String? _type;
   String? get type => _type;
-  late String? _message_id;
+  String? _message_id;
   String? get message_id => _message_id;
-  late String? _message_dst;
+  String? _message_dst;
   String? get message_dst => _message_dst;
-  late BigInt? _timestamp;
+  BigInt? _timestamp;
   BigInt? get timestamp => _timestamp;
-  late dynamic? _json;
+  dynamic? _json;
   dynamic? get json => _json;
   ProcessingEvent_RempIncludedIntoAcceptedBlock({
     required String message_id,
@@ -947,13 +947,13 @@ class ProcessingEvent_RempIncludedIntoAcceptedBlock extends ProcessingEvent {
 class ProcessingEvent_RempOther extends ProcessingEvent {
   late String? _type;
   String? get type => _type;
-  late String? _message_id;
+  String? _message_id;
   String? get message_id => _message_id;
-  late String? _message_dst;
+  String? _message_dst;
   String? get message_dst => _message_dst;
-  late BigInt? _timestamp;
+  BigInt? _timestamp;
   BigInt? get timestamp => _timestamp;
-  late dynamic? _json;
+  dynamic? _json;
   dynamic? get json => _json;
   ProcessingEvent_RempOther({
     required String message_id,
@@ -1021,11 +1021,11 @@ class ProcessingEvent_RempOther extends ProcessingEvent {
 class ProcessingEvent_RempError extends ProcessingEvent {
   late String? _type;
   String? get type => _type;
-  late String? _message_id;
+  String? _message_id;
   String? get message_id => _message_id;
-  late String? _message_dst;
+  String? _message_dst;
   String? get message_dst => _message_dst;
-  late ClientError? _error;
+  ClientError? _error;
   ClientError? get error => _error;
   ProcessingEvent_RempError({
     required String message_id,
@@ -1083,19 +1083,19 @@ class ResultOfProcessMessage extends TonSdkStructure {
   ///In addition to the regular transaction fields there is a
   ///`boc` field encoded with `base64` which contains source
   ///transaction BOC.
-  late dynamic? _transaction;
+  dynamic? _transaction;
   dynamic? get transaction => _transaction;
 
   ///Encoded as `base64`
-  late List<String>? _out_messages;
+  List<String>? _out_messages;
   List<String>? get out_messages => _out_messages;
 
   ///Optional decoded message bodies according to the optional `abi` parameter.
-  late DecodedOutput? _decoded;
+  DecodedOutput? _decoded;
   DecodedOutput? get decoded => _decoded;
 
   ///Transaction fees
-  late TransactionFees? _fees;
+  TransactionFees? _fees;
   TransactionFees? get fees => _fees;
   ResultOfProcessMessage({
     required dynamic transaction,
@@ -1157,11 +1157,11 @@ class ResultOfProcessMessage extends TonSdkStructure {
 class DecodedOutput extends TonSdkStructure {
   ///If the message can't be decoded, then `None` will be stored in
   ///the appropriate position.
-  late List<DecodedMessageBody>? _out_messages;
+  List<DecodedMessageBody>? _out_messages;
   List<DecodedMessageBody>? get out_messages => _out_messages;
 
   ///Decoded body of the function output message.
-  late dynamic? _output;
+  dynamic? _output;
   dynamic? get output => _output;
   DecodedOutput({
     required List<DecodedMessageBody> out_messages,
@@ -1201,7 +1201,7 @@ class DecodedOutput extends TonSdkStructure {
 
 class MessageMonitoringTransactionCompute extends TonSdkStructure {
   ///Compute phase exit code.
-  late int? _exit_code;
+  int? _exit_code;
   int? get exit_code => _exit_code;
   MessageMonitoringTransactionCompute({
     required int exit_code,
@@ -1228,15 +1228,15 @@ class MessageMonitoringTransactionCompute extends TonSdkStructure {
 
 class MessageMonitoringTransaction extends TonSdkStructure {
   ///Hash of the transaction. Present if transaction was included into the blocks. When then transaction was emulated this field will be missing.
-  late String? _hash;
+  String? _hash;
   String? get hash => _hash;
 
   ///Aborted field of the transaction.
-  late bool? _aborted;
+  bool? _aborted;
   bool? get aborted => _aborted;
 
   ///Optional information about the compute phase of the transaction.
-  late MessageMonitoringTransactionCompute? _compute;
+  MessageMonitoringTransactionCompute? _compute;
   MessageMonitoringTransactionCompute? get compute => _compute;
   MessageMonitoringTransaction({
     String? hash,
@@ -1279,15 +1279,15 @@ class MessageMonitoringTransaction extends TonSdkStructure {
 
 class MessageMonitoringParams extends TonSdkStructure {
   ///Monitored message identification. Can be provided as a message's BOC or (hash, address) pair. BOC is a preferable way because it helps to determine possible error reason (using TVM execution of the message).
-  late MonitoredMessage? _message;
+  MonitoredMessage? _message;
   MonitoredMessage? get message => _message;
 
   ///Block time Must be specified as a UNIX timestamp in seconds
-  late int? _wait_until;
+  int? _wait_until;
   int? get wait_until => _wait_until;
 
   ///User defined data associated with this message. Helps to identify this message when user received `MessageMonitoringResult`.
-  late dynamic? _user_data;
+  dynamic? _user_data;
   dynamic? get user_data => _user_data;
   MessageMonitoringParams({
     required MonitoredMessage message,
@@ -1333,23 +1333,23 @@ class MessageMonitoringParams extends TonSdkStructure {
 
 class MessageMonitoringResult extends TonSdkStructure {
   ///Hash of the message.
-  late String? _hash;
+  String? _hash;
   String? get hash => _hash;
 
   ///Processing status.
-  late MessageMonitoringStatus? _status;
+  MessageMonitoringStatus? _status;
   MessageMonitoringStatus? get status => _status;
 
   ///In case of `Finalized` the transaction is extracted from the block. In case of `Timeout` the transaction is emulated using the last known account state.
-  late MessageMonitoringTransaction? _transaction;
+  MessageMonitoringTransaction? _transaction;
   MessageMonitoringTransaction? get transaction => _transaction;
 
   ///In case of `Timeout` contains possible error reason.
-  late String? _error;
+  String? _error;
   String? get error => _error;
 
   ///User defined data related to this message. This is the same value as passed before with `MessageMonitoringParams` or `SendMessageParams`.
-  late dynamic? _user_data;
+  dynamic? _user_data;
   dynamic? get user_data => _user_data;
   MessageMonitoringResult({
     required String hash,
@@ -1450,7 +1450,7 @@ abstract class MonitoredMessage extends TonSdkStructure {
 class MonitoredMessage_Boc extends MonitoredMessage {
   late String? _type;
   String? get type => _type;
-  late String? _boc;
+  String? _boc;
   String? get boc => _boc;
   MonitoredMessage_Boc({
     required String boc,
@@ -1487,11 +1487,11 @@ class MonitoredMessage_HashAddress extends MonitoredMessage {
   String? get type => _type;
 
   ///Hash of the message.
-  late String? _hash;
+  String? _hash;
   String? get hash => _hash;
 
   ///Destination address of the message.
-  late String? _address;
+  String? _address;
   String? get address => _address;
   MonitoredMessage_HashAddress({
     required String hash,
@@ -1565,15 +1565,15 @@ class MessageMonitoringStatus {
 
 class MessageSendingParams extends TonSdkStructure {
   ///BOC of the message, that must be sent to the blockchain.
-  late String? _boc;
+  String? _boc;
   String? get boc => _boc;
 
   ///Expiration time of the message. Must be specified as a UNIX timestamp in seconds.
-  late int? _wait_until;
+  int? _wait_until;
   int? get wait_until => _wait_until;
 
   ///User defined data associated with this message. Helps to identify this message when user received `MessageMonitoringResult`.
-  late dynamic? _user_data;
+  dynamic? _user_data;
   dynamic? get user_data => _user_data;
   MessageSendingParams({
     required String boc,
@@ -1618,11 +1618,11 @@ class MessageSendingParams extends TonSdkStructure {
 
 class ParamsOfMonitorMessages extends TonSdkStructure {
   ///Name of the monitoring queue.
-  late String? _queue;
+  String? _queue;
   String? get queue => _queue;
 
   ///Messages to start monitoring for.
-  late List<MessageMonitoringParams>? _messages;
+  List<MessageMonitoringParams>? _messages;
   List<MessageMonitoringParams>? get messages => _messages;
   ParamsOfMonitorMessages({
     required String queue,
@@ -1664,7 +1664,7 @@ class ParamsOfMonitorMessages extends TonSdkStructure {
 
 class ParamsOfGetMonitorInfo extends TonSdkStructure {
   ///Name of the monitoring queue.
-  late String? _queue;
+  String? _queue;
   String? get queue => _queue;
   ParamsOfGetMonitorInfo({
     required String queue,
@@ -1690,11 +1690,11 @@ class ParamsOfGetMonitorInfo extends TonSdkStructure {
 
 class MonitoringQueueInfo extends TonSdkStructure {
   ///Count of the unresolved messages.
-  late int? _unresolved;
+  int? _unresolved;
   int? get unresolved => _unresolved;
 
   ///Count of resolved results.
-  late int? _resolved;
+  int? _resolved;
   int? get resolved => _resolved;
   MonitoringQueueInfo({
     required int unresolved,
@@ -1732,11 +1732,11 @@ class MonitoringQueueInfo extends TonSdkStructure {
 
 class ParamsOfFetchNextMonitorResults extends TonSdkStructure {
   ///Name of the monitoring queue.
-  late String? _queue;
+  String? _queue;
   String? get queue => _queue;
 
   ///Default is `NO_WAIT`.
-  late MonitorFetchWaitMode? _wait_mode;
+  MonitorFetchWaitMode? _wait_mode;
   MonitorFetchWaitMode? get wait_mode => _wait_mode;
   ParamsOfFetchNextMonitorResults({
     required String queue,
@@ -1771,7 +1771,7 @@ class ParamsOfFetchNextMonitorResults extends TonSdkStructure {
 
 class ResultOfFetchNextMonitorResults extends TonSdkStructure {
   ///List of the resolved results.
-  late List<MessageMonitoringResult>? _results;
+  List<MessageMonitoringResult>? _results;
   List<MessageMonitoringResult>? get results => _results;
   ResultOfFetchNextMonitorResults({
     required List<MessageMonitoringResult> results,
@@ -1803,7 +1803,7 @@ class ResultOfFetchNextMonitorResults extends TonSdkStructure {
 
 class ParamsOfCancelMonitor extends TonSdkStructure {
   ///Name of the monitoring queue.
-  late String? _queue;
+  String? _queue;
   String? get queue => _queue;
   ParamsOfCancelMonitor({
     required String queue,
@@ -1829,11 +1829,11 @@ class ParamsOfCancelMonitor extends TonSdkStructure {
 
 class ParamsOfSendMessages extends TonSdkStructure {
   ///Messages that must be sent to the blockchain.
-  late List<MessageSendingParams>? _messages;
+  List<MessageSendingParams>? _messages;
   List<MessageSendingParams>? get messages => _messages;
 
   ///Optional message monitor queue that starts monitoring for the processing results for sent messages.
-  late String? _monitor_queue;
+  String? _monitor_queue;
   String? get monitor_queue => _monitor_queue;
   ParamsOfSendMessages({
     required List<MessageSendingParams> messages,
@@ -1873,7 +1873,7 @@ class ParamsOfSendMessages extends TonSdkStructure {
 
 class ResultOfSendMessages extends TonSdkStructure {
   ///Messages that was sent to the blockchain for execution.
-  late List<MessageMonitoringParams>? _messages;
+  List<MessageMonitoringParams>? _messages;
   List<MessageMonitoringParams>? get messages => _messages;
   ResultOfSendMessages({
     required List<MessageMonitoringParams> messages,
@@ -1905,7 +1905,7 @@ class ResultOfSendMessages extends TonSdkStructure {
 
 class ParamsOfSendMessage extends TonSdkStructure {
   ///Message BOC.
-  late String? _message;
+  String? _message;
   String? get message => _message;
 
   ///If this parameter is specified and the message has the
@@ -1918,11 +1918,11 @@ class ParamsOfSendMessage extends TonSdkStructure {
   ///Note, that specifying `abi` for ABI compliant contracts is
   ///strongly recommended, so that proper processing strategy can be
   ///chosen.
-  late Abi? _abi;
+  Abi? _abi;
   Abi? get abi => _abi;
 
   ///Flag for requesting events sending. Default is `false`.
-  late bool? _send_events;
+  bool? _send_events;
   bool? get send_events => _send_events;
   ParamsOfSendMessage({
     required String message,
@@ -1966,12 +1966,12 @@ class ParamsOfSendMessage extends TonSdkStructure {
 class ResultOfSendMessage extends TonSdkStructure {
   ///This block id must be used as a parameter of the
   ///`wait_for_transaction`.
-  late String? _shard_block_id;
+  String? _shard_block_id;
   String? get shard_block_id => _shard_block_id;
 
   ///This list id must be used as a parameter of the
   ///`wait_for_transaction`.
-  late List<String>? _sending_endpoints;
+  List<String>? _sending_endpoints;
   List<String>? get sending_endpoints => _sending_endpoints;
   ResultOfSendMessage({
     required String shard_block_id,
@@ -2018,25 +2018,25 @@ class ParamsOfWaitForTransaction extends TonSdkStructure {
   ///decoded according to this ABI.
   ///
   ///The `abi_decoded` result field will be filled out.
-  late Abi? _abi;
+  Abi? _abi;
   Abi? get abi => _abi;
 
   ///Encoded with `base64`.
-  late String? _message;
+  String? _message;
   String? get message => _message;
 
   ///You must provide the same value as the `send_message` has returned.
-  late String? _shard_block_id;
+  String? _shard_block_id;
   String? get shard_block_id => _shard_block_id;
 
   ///Flag that enables/disables intermediate events. Default is `false`.
-  late bool? _send_events;
+  bool? _send_events;
   bool? get send_events => _send_events;
 
   ///Use this field to get more informative errors.
   ///Provide the same value as the `send_message` has returned.
   ///If the message was not delivered (expired), SDK will log the endpoint URLs, used for its sending.
-  late List<String>? _sending_endpoints;
+  List<String>? _sending_endpoints;
   List<String>? get sending_endpoints => _sending_endpoints;
   ParamsOfWaitForTransaction({
     Abi? abi,
@@ -2104,11 +2104,11 @@ class ParamsOfWaitForTransaction extends TonSdkStructure {
 
 class ParamsOfProcessMessage extends TonSdkStructure {
   ///Message encode parameters.
-  late ParamsOfEncodeMessage? _message_encode_params;
+  ParamsOfEncodeMessage? _message_encode_params;
   ParamsOfEncodeMessage? get message_encode_params => _message_encode_params;
 
   ///Flag for requesting events sending. Default is `false`.
-  late bool? _send_events;
+  bool? _send_events;
   bool? get send_events => _send_events;
   ParamsOfProcessMessage({
     required ParamsOfEncodeMessage message_encode_params,

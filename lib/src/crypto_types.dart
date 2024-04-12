@@ -112,19 +112,19 @@ class CryptoErrorCode {
 ///Encryption box information.
 class EncryptionBoxInfo extends TonSdkStructure {
   ///Derivation path, for instance "m/44'/396'/0'/0/0"
-  late String? _hdpath;
+  String? _hdpath;
   String? get hdpath => _hdpath;
 
   ///Cryptographic algorithm, used by this encryption box
-  late String? _algorithm;
+  String? _algorithm;
   String? get algorithm => _algorithm;
 
   ///Options, depends on algorithm and specific encryption box implementation
-  late dynamic? _options;
+  dynamic? _options;
   dynamic? get options => _options;
 
   ///Public information, depends on algorithm
-  late dynamic? _public;
+  dynamic? _public;
   dynamic? get public => _public;
   EncryptionBoxInfo({
     String? hdpath,
@@ -191,7 +191,7 @@ abstract class EncryptionAlgorithm extends TonSdkStructure {
 class EncryptionAlgorithm_AES extends EncryptionAlgorithm {
   late String? _type;
   String? get type => _type;
-  late AesParamsEB? _value;
+  AesParamsEB? _value;
   AesParamsEB? get value => _value;
   EncryptionAlgorithm_AES({
     required AesParamsEB value,
@@ -225,7 +225,7 @@ class EncryptionAlgorithm_AES extends EncryptionAlgorithm {
 class EncryptionAlgorithm_ChaCha20 extends EncryptionAlgorithm {
   late String? _type;
   String? get type => _type;
-  late ChaCha20ParamsEB? _value;
+  ChaCha20ParamsEB? _value;
   ChaCha20ParamsEB? get value => _value;
   EncryptionAlgorithm_ChaCha20({
     required ChaCha20ParamsEB value,
@@ -260,7 +260,7 @@ class EncryptionAlgorithm_ChaCha20 extends EncryptionAlgorithm {
 class EncryptionAlgorithm_NaclBox extends EncryptionAlgorithm {
   late String? _type;
   String? get type => _type;
-  late NaclBoxParamsEB? _value;
+  NaclBoxParamsEB? _value;
   NaclBoxParamsEB? get value => _value;
   EncryptionAlgorithm_NaclBox({
     required NaclBoxParamsEB value,
@@ -295,7 +295,7 @@ class EncryptionAlgorithm_NaclBox extends EncryptionAlgorithm {
 class EncryptionAlgorithm_NaclSecretBox extends EncryptionAlgorithm {
   late String? _type;
   String? get type => _type;
-  late NaclSecretBoxParamsEB? _value;
+  NaclSecretBoxParamsEB? _value;
   NaclSecretBoxParamsEB? get value => _value;
   EncryptionAlgorithm_NaclSecretBox({
     required NaclSecretBoxParamsEB value,
@@ -356,11 +356,11 @@ class CipherMode {
 }
 
 class AesParamsEB extends TonSdkStructure {
-  late CipherMode? _mode;
+  CipherMode? _mode;
   CipherMode? get mode => _mode;
-  late String? _key;
+  String? _key;
   String? get key => _key;
-  late String? _iv;
+  String? _iv;
   String? get iv => _iv;
   AesParamsEB({
     required CipherMode mode,
@@ -403,9 +403,9 @@ class AesParamsEB extends TonSdkStructure {
 }
 
 class AesInfo extends TonSdkStructure {
-  late CipherMode? _mode;
+  CipherMode? _mode;
   CipherMode? get mode => _mode;
-  late String? _iv;
+  String? _iv;
   String? get iv => _iv;
   AesInfo({
     required CipherMode mode,
@@ -439,11 +439,11 @@ class AesInfo extends TonSdkStructure {
 
 class ChaCha20ParamsEB extends TonSdkStructure {
   ///Must be encoded with `hex`.
-  late String? _key;
+  String? _key;
   String? get key => _key;
 
   ///Must be encoded with `hex`.
-  late String? _nonce;
+  String? _nonce;
   String? get nonce => _nonce;
   ChaCha20ParamsEB({
     required String key,
@@ -479,15 +479,15 @@ class ChaCha20ParamsEB extends TonSdkStructure {
 
 class NaclBoxParamsEB extends TonSdkStructure {
   ///Must be encoded with `hex`.
-  late String? _their_public;
+  String? _their_public;
   String? get their_public => _their_public;
 
   ///Must be encoded with `hex`.
-  late String? _secret;
+  String? _secret;
   String? get secret => _secret;
 
   ///Must be encoded with `hex`.
-  late String? _nonce;
+  String? _nonce;
   String? get nonce => _nonce;
   NaclBoxParamsEB({
     required String their_public,
@@ -534,11 +534,11 @@ class NaclBoxParamsEB extends TonSdkStructure {
 
 class NaclSecretBoxParamsEB extends TonSdkStructure {
   ///Secret key - unprefixed 0-padded to 64 symbols hex string
-  late String? _key;
+  String? _key;
   String? get key => _key;
 
   ///Nonce in `hex`
-  late String? _nonce;
+  String? _nonce;
   String? get nonce => _nonce;
   NaclSecretBoxParamsEB({
     required String key,
@@ -595,9 +595,9 @@ abstract class CryptoBoxSecret extends TonSdkStructure {
 class CryptoBoxSecret_RandomSeedPhrase extends CryptoBoxSecret {
   late String? _type;
   String? get type => _type;
-  late MnemonicDictionary? _dictionary;
+  MnemonicDictionary? _dictionary;
   MnemonicDictionary? get dictionary => _dictionary;
-  late int? _wordcount;
+  int? _wordcount;
   int? get wordcount => _wordcount;
   CryptoBoxSecret_RandomSeedPhrase({
     required MnemonicDictionary dictionary,
@@ -647,11 +647,11 @@ class CryptoBoxSecret_RandomSeedPhrase extends CryptoBoxSecret {
 class CryptoBoxSecret_PredefinedSeedPhrase extends CryptoBoxSecret {
   late String? _type;
   String? get type => _type;
-  late String? _phrase;
+  String? _phrase;
   String? get phrase => _phrase;
-  late MnemonicDictionary? _dictionary;
+  MnemonicDictionary? _dictionary;
   MnemonicDictionary? get dictionary => _dictionary;
-  late int? _wordcount;
+  int? _wordcount;
   int? get wordcount => _wordcount;
   CryptoBoxSecret_PredefinedSeedPhrase({
     required String phrase,
@@ -716,7 +716,7 @@ class CryptoBoxSecret_EncryptedSecret extends CryptoBoxSecret {
   String? get type => _type;
 
   ///It is an object, containing encrypted seed phrase or private key (now we support only seed phrase).
-  late String? _encrypted_secret;
+  String? _encrypted_secret;
   String? get encrypted_secret => _encrypted_secret;
   CryptoBoxSecret_EncryptedSecret({
     required String encrypted_secret,
@@ -767,7 +767,7 @@ abstract class BoxEncryptionAlgorithm extends TonSdkStructure {
 class BoxEncryptionAlgorithm_ChaCha20 extends BoxEncryptionAlgorithm {
   late String? _type;
   String? get type => _type;
-  late ChaCha20ParamsCB? _value;
+  ChaCha20ParamsCB? _value;
   ChaCha20ParamsCB? get value => _value;
   BoxEncryptionAlgorithm_ChaCha20({
     required ChaCha20ParamsCB value,
@@ -802,7 +802,7 @@ class BoxEncryptionAlgorithm_ChaCha20 extends BoxEncryptionAlgorithm {
 class BoxEncryptionAlgorithm_NaclBox extends BoxEncryptionAlgorithm {
   late String? _type;
   String? get type => _type;
-  late NaclBoxParamsCB? _value;
+  NaclBoxParamsCB? _value;
   NaclBoxParamsCB? get value => _value;
   BoxEncryptionAlgorithm_NaclBox({
     required NaclBoxParamsCB value,
@@ -837,7 +837,7 @@ class BoxEncryptionAlgorithm_NaclBox extends BoxEncryptionAlgorithm {
 class BoxEncryptionAlgorithm_NaclSecretBox extends BoxEncryptionAlgorithm {
   late String? _type;
   String? get type => _type;
-  late NaclSecretBoxParamsCB? _value;
+  NaclSecretBoxParamsCB? _value;
   NaclSecretBoxParamsCB? get value => _value;
   BoxEncryptionAlgorithm_NaclSecretBox({
     required NaclSecretBoxParamsCB value,
@@ -871,7 +871,7 @@ class BoxEncryptionAlgorithm_NaclSecretBox extends BoxEncryptionAlgorithm {
 
 class ChaCha20ParamsCB extends TonSdkStructure {
   ///Must be encoded with `hex`.
-  late String? _nonce;
+  String? _nonce;
   String? get nonce => _nonce;
   ChaCha20ParamsCB({
     required String nonce,
@@ -897,11 +897,11 @@ class ChaCha20ParamsCB extends TonSdkStructure {
 
 class NaclBoxParamsCB extends TonSdkStructure {
   ///Must be encoded with `hex`.
-  late String? _their_public;
+  String? _their_public;
   String? get their_public => _their_public;
 
   ///Must be encoded with `hex`.
-  late String? _nonce;
+  String? _nonce;
   String? get nonce => _nonce;
   NaclBoxParamsCB({
     required String their_public,
@@ -938,7 +938,7 @@ class NaclBoxParamsCB extends TonSdkStructure {
 
 class NaclSecretBoxParamsCB extends TonSdkStructure {
   ///Nonce in `hex`
-  late String? _nonce;
+  String? _nonce;
   String? get nonce => _nonce;
   NaclSecretBoxParamsCB({
     required String nonce,
@@ -1022,7 +1022,7 @@ class MnemonicDictionary {
 
 class ParamsOfFactorize extends TonSdkStructure {
   ///Hexadecimal representation of u64 composite number.
-  late String? _composite;
+  String? _composite;
   String? get composite => _composite;
   ParamsOfFactorize({
     required String composite,
@@ -1049,7 +1049,7 @@ class ParamsOfFactorize extends TonSdkStructure {
 
 class ResultOfFactorize extends TonSdkStructure {
   ///Two factors of composite or empty if composite can't be factorized.
-  late List<String>? _factors;
+  List<String>? _factors;
   List<String>? get factors => _factors;
   ResultOfFactorize({
     required List<String> factors,
@@ -1080,15 +1080,15 @@ class ResultOfFactorize extends TonSdkStructure {
 
 class ParamsOfModularPower extends TonSdkStructure {
   ///`base` argument of calculation.
-  late String? _base;
+  String? _base;
   String? get base => _base;
 
   ///`exponent` argument of calculation.
-  late String? _exponent;
+  String? _exponent;
   String? get exponent => _exponent;
 
   ///`modulus` argument of calculation.
-  late String? _modulus;
+  String? _modulus;
   String? get modulus => _modulus;
   ParamsOfModularPower({
     required String base,
@@ -1136,7 +1136,7 @@ class ParamsOfModularPower extends TonSdkStructure {
 
 class ResultOfModularPower extends TonSdkStructure {
   ///Result of modular exponentiation
-  late String? _modular_power;
+  String? _modular_power;
   String? get modular_power => _modular_power;
   ResultOfModularPower({
     required String modular_power,
@@ -1163,7 +1163,7 @@ class ResultOfModularPower extends TonSdkStructure {
 
 class ParamsOfTonCrc16 extends TonSdkStructure {
   ///Encoded with `base64`.
-  late String? _data;
+  String? _data;
   String? get data => _data;
   ParamsOfTonCrc16({
     required String data,
@@ -1189,7 +1189,7 @@ class ParamsOfTonCrc16 extends TonSdkStructure {
 
 class ResultOfTonCrc16 extends TonSdkStructure {
   ///Calculated CRC for input data.
-  late int? _crc;
+  int? _crc;
   int? get crc => _crc;
   ResultOfTonCrc16({
     required int crc,
@@ -1215,7 +1215,7 @@ class ResultOfTonCrc16 extends TonSdkStructure {
 
 class ParamsOfGenerateRandomBytes extends TonSdkStructure {
   ///Size of random byte array.
-  late int? _length;
+  int? _length;
   int? get length => _length;
   ParamsOfGenerateRandomBytes({
     required int length,
@@ -1242,7 +1242,7 @@ class ParamsOfGenerateRandomBytes extends TonSdkStructure {
 
 class ResultOfGenerateRandomBytes extends TonSdkStructure {
   ///Generated bytes encoded in `base64`.
-  late String? _bytes;
+  String? _bytes;
   String? get bytes => _bytes;
   ResultOfGenerateRandomBytes({
     required String bytes,
@@ -1269,7 +1269,7 @@ class ResultOfGenerateRandomBytes extends TonSdkStructure {
 
 class ParamsOfConvertPublicKeyToTonSafeFormat extends TonSdkStructure {
   ///Public key - 64 symbols hex string
-  late String? _public_key;
+  String? _public_key;
   String? get public_key => _public_key;
   ParamsOfConvertPublicKeyToTonSafeFormat({
     required String public_key,
@@ -1296,7 +1296,7 @@ class ParamsOfConvertPublicKeyToTonSafeFormat extends TonSdkStructure {
 
 class ResultOfConvertPublicKeyToTonSafeFormat extends TonSdkStructure {
   ///Public key represented in TON safe format.
-  late String? _ton_public_key;
+  String? _ton_public_key;
   String? get ton_public_key => _ton_public_key;
   ResultOfConvertPublicKeyToTonSafeFormat({
     required String ton_public_key,
@@ -1323,11 +1323,11 @@ class ResultOfConvertPublicKeyToTonSafeFormat extends TonSdkStructure {
 
 class KeyPair extends TonSdkStructure {
   ///Public key - 64 symbols hex string
-  late String? _public;
+  String? _public;
   String? get public => _public;
 
   ///Private key - u64 symbols hex string
-  late String? _secret;
+  String? _secret;
   String? get secret => _secret;
   KeyPair({
     required String public,
@@ -1363,11 +1363,11 @@ class KeyPair extends TonSdkStructure {
 
 class ParamsOfSign extends TonSdkStructure {
   ///Data that must be signed encoded in `base64`.
-  late String? _unsigned;
+  String? _unsigned;
   String? get unsigned => _unsigned;
 
   ///Sign keys.
-  late KeyPair? _keys;
+  KeyPair? _keys;
   KeyPair? get keys => _keys;
   ParamsOfSign({
     required String unsigned,
@@ -1403,11 +1403,11 @@ class ParamsOfSign extends TonSdkStructure {
 
 class ResultOfSign extends TonSdkStructure {
   ///Signed data combined with signature encoded in `base64`.
-  late String? _signed;
+  String? _signed;
   String? get signed => _signed;
 
   ///Signature encoded in `hex`.
-  late String? _signature;
+  String? _signature;
   String? get signature => _signature;
   ResultOfSign({
     required String signed,
@@ -1444,11 +1444,11 @@ class ResultOfSign extends TonSdkStructure {
 
 class ParamsOfVerifySignature extends TonSdkStructure {
   ///Signed data that must be verified encoded in `base64`.
-  late String? _signed;
+  String? _signed;
   String? get signed => _signed;
 
   ///Signer's public key - 64 symbols hex string
-  late String? _public;
+  String? _public;
   String? get public => _public;
   ParamsOfVerifySignature({
     required String signed,
@@ -1486,7 +1486,7 @@ class ParamsOfVerifySignature extends TonSdkStructure {
 
 class ResultOfVerifySignature extends TonSdkStructure {
   ///Unsigned data encoded in `base64`.
-  late String? _unsigned;
+  String? _unsigned;
   String? get unsigned => _unsigned;
   ResultOfVerifySignature({
     required String unsigned,
@@ -1513,7 +1513,7 @@ class ResultOfVerifySignature extends TonSdkStructure {
 
 class ParamsOfHash extends TonSdkStructure {
   ///Encoded with `base64`.
-  late String? _data;
+  String? _data;
   String? get data => _data;
   ParamsOfHash({
     required String data,
@@ -1539,7 +1539,7 @@ class ParamsOfHash extends TonSdkStructure {
 
 class ResultOfHash extends TonSdkStructure {
   ///Encoded with 'hex'.
-  late String? _hash;
+  String? _hash;
   String? get hash => _hash;
   ResultOfHash({
     required String hash,
@@ -1565,27 +1565,27 @@ class ResultOfHash extends TonSdkStructure {
 
 class ParamsOfScrypt extends TonSdkStructure {
   ///The password bytes to be hashed. Must be encoded with `base64`.
-  late String? _password;
+  String? _password;
   String? get password => _password;
 
   ///Salt bytes that modify the hash to protect against Rainbow table attacks. Must be encoded with `base64`.
-  late String? _salt;
+  String? _salt;
   String? get salt => _salt;
 
   ///CPU/memory cost parameter
-  late int? _log_n;
+  int? _log_n;
   int? get log_n => _log_n;
 
   ///The block size parameter, which fine-tunes sequential memory read size and performance.
-  late int? _r;
+  int? _r;
   int? get r => _r;
 
   ///Parallelization parameter.
-  late int? _p;
+  int? _p;
   int? get p => _p;
 
   ///Intended output length in octets of the derived key.
-  late int? _dk_len;
+  int? _dk_len;
   int? get dk_len => _dk_len;
   ParamsOfScrypt({
     required String password,
@@ -1661,7 +1661,7 @@ class ParamsOfScrypt extends TonSdkStructure {
 
 class ResultOfScrypt extends TonSdkStructure {
   ///Encoded with `hex`.
-  late String? _key;
+  String? _key;
   String? get key => _key;
   ResultOfScrypt({
     required String key,
@@ -1687,7 +1687,7 @@ class ResultOfScrypt extends TonSdkStructure {
 
 class ParamsOfNaclSignKeyPairFromSecret extends TonSdkStructure {
   ///Secret key - unprefixed 0-padded to 64 symbols hex string
-  late String? _secret;
+  String? _secret;
   String? get secret => _secret;
   ParamsOfNaclSignKeyPairFromSecret({
     required String secret,
@@ -1714,11 +1714,11 @@ class ParamsOfNaclSignKeyPairFromSecret extends TonSdkStructure {
 
 class ParamsOfNaclSign extends TonSdkStructure {
   ///Data that must be signed encoded in `base64`.
-  late String? _unsigned;
+  String? _unsigned;
   String? get unsigned => _unsigned;
 
   ///Signer's secret key - unprefixed 0-padded to 128 symbols hex string (concatenation of 64 symbols secret and 64 symbols public keys). See `nacl_sign_keypair_from_secret_key`.
-  late String? _secret;
+  String? _secret;
   String? get secret => _secret;
   ParamsOfNaclSign({
     required String unsigned,
@@ -1755,7 +1755,7 @@ class ParamsOfNaclSign extends TonSdkStructure {
 
 class ResultOfNaclSign extends TonSdkStructure {
   ///Signed data, encoded in `base64`.
-  late String? _signed;
+  String? _signed;
   String? get signed => _signed;
   ResultOfNaclSign({
     required String signed,
@@ -1781,11 +1781,11 @@ class ResultOfNaclSign extends TonSdkStructure {
 
 class ParamsOfNaclSignOpen extends TonSdkStructure {
   ///Encoded with `base64`.
-  late String? _signed;
+  String? _signed;
   String? get signed => _signed;
 
   ///Signer's public key - unprefixed 0-padded to 64 symbols hex string
-  late String? _public;
+  String? _public;
   String? get public => _public;
   ParamsOfNaclSignOpen({
     required String signed,
@@ -1821,7 +1821,7 @@ class ParamsOfNaclSignOpen extends TonSdkStructure {
 
 class ResultOfNaclSignOpen extends TonSdkStructure {
   ///Unsigned data, encoded in `base64`.
-  late String? _unsigned;
+  String? _unsigned;
   String? get unsigned => _unsigned;
   ResultOfNaclSignOpen({
     required String unsigned,
@@ -1848,7 +1848,7 @@ class ResultOfNaclSignOpen extends TonSdkStructure {
 
 class ResultOfNaclSignDetached extends TonSdkStructure {
   ///Signature encoded in `hex`.
-  late String? _signature;
+  String? _signature;
   String? get signature => _signature;
   ResultOfNaclSignDetached({
     required String signature,
@@ -1875,15 +1875,15 @@ class ResultOfNaclSignDetached extends TonSdkStructure {
 
 class ParamsOfNaclSignDetachedVerify extends TonSdkStructure {
   ///Encoded with `base64`.
-  late String? _unsigned;
+  String? _unsigned;
   String? get unsigned => _unsigned;
 
   ///Encoded with `hex`.
-  late String? _signature;
+  String? _signature;
   String? get signature => _signature;
 
   ///Signer's public key - unprefixed 0-padded to 64 symbols hex string.
-  late String? _public;
+  String? _public;
   String? get public => _public;
   ParamsOfNaclSignDetachedVerify({
     required String unsigned,
@@ -1932,7 +1932,7 @@ class ParamsOfNaclSignDetachedVerify extends TonSdkStructure {
 
 class ResultOfNaclSignDetachedVerify extends TonSdkStructure {
   ///`true` if verification succeeded or `false` if it failed
-  late bool? _succeeded;
+  bool? _succeeded;
   bool? get succeeded => _succeeded;
   ResultOfNaclSignDetachedVerify({
     required bool succeeded,
@@ -1959,7 +1959,7 @@ class ResultOfNaclSignDetachedVerify extends TonSdkStructure {
 
 class ParamsOfNaclBoxKeyPairFromSecret extends TonSdkStructure {
   ///Secret key - unprefixed 0-padded to 64 symbols hex string
-  late String? _secret;
+  String? _secret;
   String? get secret => _secret;
   ParamsOfNaclBoxKeyPairFromSecret({
     required String secret,
@@ -1986,19 +1986,19 @@ class ParamsOfNaclBoxKeyPairFromSecret extends TonSdkStructure {
 
 class ParamsOfNaclBox extends TonSdkStructure {
   ///Data that must be encrypted encoded in `base64`.
-  late String? _decrypted;
+  String? _decrypted;
   String? get decrypted => _decrypted;
 
   ///Nonce, encoded in `hex`
-  late String? _nonce;
+  String? _nonce;
   String? get nonce => _nonce;
 
   ///Receiver's public key - unprefixed 0-padded to 64 symbols hex string
-  late String? _their_public;
+  String? _their_public;
   String? get their_public => _their_public;
 
   ///Sender's private key - unprefixed 0-padded to 64 symbols hex string
-  late String? _secret;
+  String? _secret;
   String? get secret => _secret;
   ParamsOfNaclBox({
     required String decrypted,
@@ -2056,7 +2056,7 @@ class ParamsOfNaclBox extends TonSdkStructure {
 
 class ResultOfNaclBox extends TonSdkStructure {
   ///Encrypted data encoded in `base64`.
-  late String? _encrypted;
+  String? _encrypted;
   String? get encrypted => _encrypted;
   ResultOfNaclBox({
     required String encrypted,
@@ -2083,19 +2083,19 @@ class ResultOfNaclBox extends TonSdkStructure {
 
 class ParamsOfNaclBoxOpen extends TonSdkStructure {
   ///Encoded with `base64`.
-  late String? _encrypted;
+  String? _encrypted;
   String? get encrypted => _encrypted;
 
   ///Nonce
-  late String? _nonce;
+  String? _nonce;
   String? get nonce => _nonce;
 
   ///Sender's public key - unprefixed 0-padded to 64 symbols hex string
-  late String? _their_public;
+  String? _their_public;
   String? get their_public => _their_public;
 
   ///Receiver's private key - unprefixed 0-padded to 64 symbols hex string
-  late String? _secret;
+  String? _secret;
   String? get secret => _secret;
   ParamsOfNaclBoxOpen({
     required String encrypted,
@@ -2153,7 +2153,7 @@ class ParamsOfNaclBoxOpen extends TonSdkStructure {
 
 class ResultOfNaclBoxOpen extends TonSdkStructure {
   ///Decrypted data encoded in `base64`.
-  late String? _decrypted;
+  String? _decrypted;
   String? get decrypted => _decrypted;
   ResultOfNaclBoxOpen({
     required String decrypted,
@@ -2180,15 +2180,15 @@ class ResultOfNaclBoxOpen extends TonSdkStructure {
 
 class ParamsOfNaclSecretBox extends TonSdkStructure {
   ///Encoded with `base64`.
-  late String? _decrypted;
+  String? _decrypted;
   String? get decrypted => _decrypted;
 
   ///Nonce in `hex`
-  late String? _nonce;
+  String? _nonce;
   String? get nonce => _nonce;
 
   ///Secret key - unprefixed 0-padded to 64 symbols hex string
-  late String? _key;
+  String? _key;
   String? get key => _key;
   ParamsOfNaclSecretBox({
     required String decrypted,
@@ -2235,15 +2235,15 @@ class ParamsOfNaclSecretBox extends TonSdkStructure {
 
 class ParamsOfNaclSecretBoxOpen extends TonSdkStructure {
   ///Encoded with `base64`.
-  late String? _encrypted;
+  String? _encrypted;
   String? get encrypted => _encrypted;
 
   ///Nonce in `hex`
-  late String? _nonce;
+  String? _nonce;
   String? get nonce => _nonce;
 
   ///Secret key - unprefixed 0-padded to 64 symbols hex string
-  late String? _key;
+  String? _key;
   String? get key => _key;
   ParamsOfNaclSecretBoxOpen({
     required String encrypted,
@@ -2291,7 +2291,7 @@ class ParamsOfNaclSecretBoxOpen extends TonSdkStructure {
 
 class ParamsOfMnemonicWords extends TonSdkStructure {
   ///Dictionary identifier
-  late MnemonicDictionary? _dictionary;
+  MnemonicDictionary? _dictionary;
   MnemonicDictionary? get dictionary => _dictionary;
   ParamsOfMnemonicWords({
     MnemonicDictionary? dictionary,
@@ -2315,7 +2315,7 @@ class ParamsOfMnemonicWords extends TonSdkStructure {
 
 class ResultOfMnemonicWords extends TonSdkStructure {
   ///The list of mnemonic words
-  late String? _words;
+  String? _words;
   String? get words => _words;
   ResultOfMnemonicWords({
     required String words,
@@ -2341,11 +2341,11 @@ class ResultOfMnemonicWords extends TonSdkStructure {
 
 class ParamsOfMnemonicFromRandom extends TonSdkStructure {
   ///Dictionary identifier
-  late MnemonicDictionary? _dictionary;
+  MnemonicDictionary? _dictionary;
   MnemonicDictionary? get dictionary => _dictionary;
 
   ///Mnemonic word count
-  late int? _word_count;
+  int? _word_count;
   int? get word_count => _word_count;
   ParamsOfMnemonicFromRandom({
     MnemonicDictionary? dictionary,
@@ -2377,7 +2377,7 @@ class ParamsOfMnemonicFromRandom extends TonSdkStructure {
 
 class ResultOfMnemonicFromRandom extends TonSdkStructure {
   ///String of mnemonic words
-  late String? _phrase;
+  String? _phrase;
   String? get phrase => _phrase;
   ResultOfMnemonicFromRandom({
     required String phrase,
@@ -2404,15 +2404,15 @@ class ResultOfMnemonicFromRandom extends TonSdkStructure {
 
 class ParamsOfMnemonicFromEntropy extends TonSdkStructure {
   ///Hex encoded.
-  late String? _entropy;
+  String? _entropy;
   String? get entropy => _entropy;
 
   ///Dictionary identifier
-  late MnemonicDictionary? _dictionary;
+  MnemonicDictionary? _dictionary;
   MnemonicDictionary? get dictionary => _dictionary;
 
   ///Mnemonic word count
-  late int? _word_count;
+  int? _word_count;
   int? get word_count => _word_count;
   ParamsOfMnemonicFromEntropy({
     required String entropy,
@@ -2455,7 +2455,7 @@ class ParamsOfMnemonicFromEntropy extends TonSdkStructure {
 
 class ResultOfMnemonicFromEntropy extends TonSdkStructure {
   ///Phrase
-  late String? _phrase;
+  String? _phrase;
   String? get phrase => _phrase;
   ResultOfMnemonicFromEntropy({
     required String phrase,
@@ -2482,15 +2482,15 @@ class ResultOfMnemonicFromEntropy extends TonSdkStructure {
 
 class ParamsOfMnemonicVerify extends TonSdkStructure {
   ///Phrase
-  late String? _phrase;
+  String? _phrase;
   String? get phrase => _phrase;
 
   ///Dictionary identifier
-  late MnemonicDictionary? _dictionary;
+  MnemonicDictionary? _dictionary;
   MnemonicDictionary? get dictionary => _dictionary;
 
   ///Word count
-  late int? _word_count;
+  int? _word_count;
   int? get word_count => _word_count;
   ParamsOfMnemonicVerify({
     required String phrase,
@@ -2533,7 +2533,7 @@ class ParamsOfMnemonicVerify extends TonSdkStructure {
 
 class ResultOfMnemonicVerify extends TonSdkStructure {
   ///Flag indicating if the mnemonic is valid or not
-  late bool? _valid;
+  bool? _valid;
   bool? get valid => _valid;
   ResultOfMnemonicVerify({
     required bool valid,
@@ -2559,19 +2559,19 @@ class ResultOfMnemonicVerify extends TonSdkStructure {
 
 class ParamsOfMnemonicDeriveSignKeys extends TonSdkStructure {
   ///Phrase
-  late String? _phrase;
+  String? _phrase;
   String? get phrase => _phrase;
 
   ///Derivation path, for instance "m/44'/396'/0'/0/0"
-  late String? _path;
+  String? _path;
   String? get path => _path;
 
   ///Dictionary identifier
-  late MnemonicDictionary? _dictionary;
+  MnemonicDictionary? _dictionary;
   MnemonicDictionary? get dictionary => _dictionary;
 
   ///Word count
-  late int? _word_count;
+  int? _word_count;
   int? get word_count => _word_count;
   ParamsOfMnemonicDeriveSignKeys({
     required String phrase,
@@ -2622,15 +2622,15 @@ class ParamsOfMnemonicDeriveSignKeys extends TonSdkStructure {
 
 class ParamsOfHDKeyXPrvFromMnemonic extends TonSdkStructure {
   ///String with seed phrase
-  late String? _phrase;
+  String? _phrase;
   String? get phrase => _phrase;
 
   ///Dictionary identifier
-  late MnemonicDictionary? _dictionary;
+  MnemonicDictionary? _dictionary;
   MnemonicDictionary? get dictionary => _dictionary;
 
   ///Mnemonic word count
-  late int? _word_count;
+  int? _word_count;
   int? get word_count => _word_count;
   ParamsOfHDKeyXPrvFromMnemonic({
     required String phrase,
@@ -2673,7 +2673,7 @@ class ParamsOfHDKeyXPrvFromMnemonic extends TonSdkStructure {
 
 class ResultOfHDKeyXPrvFromMnemonic extends TonSdkStructure {
   ///Serialized extended master private key
-  late String? _xprv;
+  String? _xprv;
   String? get xprv => _xprv;
   ResultOfHDKeyXPrvFromMnemonic({
     required String xprv,
@@ -2700,15 +2700,15 @@ class ResultOfHDKeyXPrvFromMnemonic extends TonSdkStructure {
 
 class ParamsOfHDKeyDeriveFromXPrv extends TonSdkStructure {
   ///Serialized extended private key
-  late String? _xprv;
+  String? _xprv;
   String? get xprv => _xprv;
 
   ///Child index (see BIP-0032)
-  late int? _child_index;
+  int? _child_index;
   int? get child_index => _child_index;
 
   ///Indicates the derivation of hardened/not-hardened key (see BIP-0032)
-  late bool? _hardened;
+  bool? _hardened;
   bool? get hardened => _hardened;
   ParamsOfHDKeyDeriveFromXPrv({
     required String xprv,
@@ -2757,7 +2757,7 @@ class ParamsOfHDKeyDeriveFromXPrv extends TonSdkStructure {
 
 class ResultOfHDKeyDeriveFromXPrv extends TonSdkStructure {
   ///Serialized extended private key
-  late String? _xprv;
+  String? _xprv;
   String? get xprv => _xprv;
   ResultOfHDKeyDeriveFromXPrv({
     required String xprv,
@@ -2784,11 +2784,11 @@ class ResultOfHDKeyDeriveFromXPrv extends TonSdkStructure {
 
 class ParamsOfHDKeyDeriveFromXPrvPath extends TonSdkStructure {
   ///Serialized extended private key
-  late String? _xprv;
+  String? _xprv;
   String? get xprv => _xprv;
 
   ///Derivation path, for instance "m/44'/396'/0'/0/0"
-  late String? _path;
+  String? _path;
   String? get path => _path;
   ParamsOfHDKeyDeriveFromXPrvPath({
     required String xprv,
@@ -2826,7 +2826,7 @@ class ParamsOfHDKeyDeriveFromXPrvPath extends TonSdkStructure {
 
 class ResultOfHDKeyDeriveFromXPrvPath extends TonSdkStructure {
   ///Derived serialized extended private key
-  late String? _xprv;
+  String? _xprv;
   String? get xprv => _xprv;
   ResultOfHDKeyDeriveFromXPrvPath({
     required String xprv,
@@ -2853,7 +2853,7 @@ class ResultOfHDKeyDeriveFromXPrvPath extends TonSdkStructure {
 
 class ParamsOfHDKeySecretFromXPrv extends TonSdkStructure {
   ///Serialized extended private key
-  late String? _xprv;
+  String? _xprv;
   String? get xprv => _xprv;
   ParamsOfHDKeySecretFromXPrv({
     required String xprv,
@@ -2880,7 +2880,7 @@ class ParamsOfHDKeySecretFromXPrv extends TonSdkStructure {
 
 class ResultOfHDKeySecretFromXPrv extends TonSdkStructure {
   ///Private key - 64 symbols hex string
-  late String? _secret;
+  String? _secret;
   String? get secret => _secret;
   ResultOfHDKeySecretFromXPrv({
     required String secret,
@@ -2907,7 +2907,7 @@ class ResultOfHDKeySecretFromXPrv extends TonSdkStructure {
 
 class ParamsOfHDKeyPublicFromXPrv extends TonSdkStructure {
   ///Serialized extended private key
-  late String? _xprv;
+  String? _xprv;
   String? get xprv => _xprv;
   ParamsOfHDKeyPublicFromXPrv({
     required String xprv,
@@ -2934,7 +2934,7 @@ class ParamsOfHDKeyPublicFromXPrv extends TonSdkStructure {
 
 class ResultOfHDKeyPublicFromXPrv extends TonSdkStructure {
   ///Public key - 64 symbols hex string
-  late String? _public;
+  String? _public;
   String? get public => _public;
   ResultOfHDKeyPublicFromXPrv({
     required String public,
@@ -2961,15 +2961,15 @@ class ResultOfHDKeyPublicFromXPrv extends TonSdkStructure {
 
 class ParamsOfChaCha20 extends TonSdkStructure {
   ///Must be encoded with `base64`.
-  late String? _data;
+  String? _data;
   String? get data => _data;
 
   ///Must be encoded with `hex`.
-  late String? _key;
+  String? _key;
   String? get key => _key;
 
   ///Must be encoded with `hex`.
-  late String? _nonce;
+  String? _nonce;
   String? get nonce => _nonce;
   ParamsOfChaCha20({
     required String data,
@@ -3015,7 +3015,7 @@ class ParamsOfChaCha20 extends TonSdkStructure {
 
 class ResultOfChaCha20 extends TonSdkStructure {
   ///Encoded with `base64`.
-  late String? _data;
+  String? _data;
   String? get data => _data;
   ResultOfChaCha20({
     required String data,
@@ -3041,11 +3041,11 @@ class ResultOfChaCha20 extends TonSdkStructure {
 
 class ParamsOfCreateCryptoBox extends TonSdkStructure {
   ///Salt used for secret encryption. For example, a mobile device can use device ID as salt.
-  late String? _secret_encryption_salt;
+  String? _secret_encryption_salt;
   String? get secret_encryption_salt => _secret_encryption_salt;
 
   ///Cryptobox secret
-  late CryptoBoxSecret? _secret;
+  CryptoBoxSecret? _secret;
   CryptoBoxSecret? get secret => _secret;
   ParamsOfCreateCryptoBox({
     required String secret_encryption_salt,
@@ -3083,7 +3083,7 @@ class ParamsOfCreateCryptoBox extends TonSdkStructure {
 }
 
 class RegisteredCryptoBox extends TonSdkStructure {
-  late int? _handle;
+  int? _handle;
   int? get handle => _handle;
   RegisteredCryptoBox({
     required int handle,
@@ -3130,7 +3130,7 @@ class ParamsOfAppPasswordProvider_GetPassword
   String? get type => _type;
 
   ///Temporary library pubkey, that is used on application side for password encryption, along with application temporary private key and nonce. Used for password decryption on library side.
-  late String? _encryption_public_key;
+  String? _encryption_public_key;
   String? get encryption_public_key => _encryption_public_key;
   ParamsOfAppPasswordProvider_GetPassword({
     required String encryption_public_key,
@@ -3178,11 +3178,11 @@ class ResultOfAppPasswordProvider_GetPassword
   String? get type => _type;
 
   ///Password, encrypted and encoded to base64. Crypto box uses this password to decrypt its secret (seed phrase).
-  late String? _encrypted_password;
+  String? _encrypted_password;
   String? get encrypted_password => _encrypted_password;
 
   ///Used together with `encryption_public_key` to decode `encrypted_password`.
-  late String? _app_encryption_pubkey;
+  String? _app_encryption_pubkey;
   String? get app_encryption_pubkey => _app_encryption_pubkey;
   ResultOfAppPasswordProvider_GetPassword({
     required String encrypted_password,
@@ -3229,7 +3229,7 @@ class ResultOfAppPasswordProvider_GetPassword
 
 class ResultOfGetCryptoBoxInfo extends TonSdkStructure {
   ///Secret (seed phrase) encrypted with salt and password.
-  late String? _encrypted_secret;
+  String? _encrypted_secret;
   String? get encrypted_secret => _encrypted_secret;
   ResultOfGetCryptoBoxInfo({
     required String encrypted_secret,
@@ -3256,11 +3256,11 @@ class ResultOfGetCryptoBoxInfo extends TonSdkStructure {
 }
 
 class ResultOfGetCryptoBoxSeedPhrase extends TonSdkStructure {
-  late String? _phrase;
+  String? _phrase;
   String? get phrase => _phrase;
-  late MnemonicDictionary? _dictionary;
+  MnemonicDictionary? _dictionary;
   MnemonicDictionary? get dictionary => _dictionary;
-  late int? _wordcount;
+  int? _wordcount;
   int? get wordcount => _wordcount;
   ResultOfGetCryptoBoxSeedPhrase({
     required String phrase,
@@ -3309,15 +3309,15 @@ class ResultOfGetCryptoBoxSeedPhrase extends TonSdkStructure {
 
 class ParamsOfGetSigningBoxFromCryptoBox extends TonSdkStructure {
   ///Crypto Box Handle.
-  late int? _handle;
+  int? _handle;
   int? get handle => _handle;
 
   ///By default, Everscale HD path is used.
-  late String? _hdpath;
+  String? _hdpath;
   String? get hdpath => _hdpath;
 
   ///Store derived secret for this lifetime (in ms). The timer starts after each signing box operation. Secrets will be deleted immediately after each signing box operation, if this value is not set.
-  late int? _secret_lifetime;
+  int? _secret_lifetime;
   int? get secret_lifetime => _secret_lifetime;
   ParamsOfGetSigningBoxFromCryptoBox({
     required int handle,
@@ -3361,7 +3361,7 @@ class ParamsOfGetSigningBoxFromCryptoBox extends TonSdkStructure {
 
 class RegisteredSigningBox extends TonSdkStructure {
   ///Handle of the signing box.
-  late int? _handle;
+  int? _handle;
   int? get handle => _handle;
   RegisteredSigningBox({
     required int handle,
@@ -3387,19 +3387,19 @@ class RegisteredSigningBox extends TonSdkStructure {
 
 class ParamsOfGetEncryptionBoxFromCryptoBox extends TonSdkStructure {
   ///Crypto Box Handle.
-  late int? _handle;
+  int? _handle;
   int? get handle => _handle;
 
   ///By default, Everscale HD path is used.
-  late String? _hdpath;
+  String? _hdpath;
   String? get hdpath => _hdpath;
 
   ///Encryption algorithm.
-  late BoxEncryptionAlgorithm? _algorithm;
+  BoxEncryptionAlgorithm? _algorithm;
   BoxEncryptionAlgorithm? get algorithm => _algorithm;
 
   ///Store derived secret for encryption algorithm for this lifetime (in ms). The timer starts after each encryption box operation. Secrets will be deleted (overwritten with zeroes) after each encryption operation, if this value is not set.
-  late int? _secret_lifetime;
+  int? _secret_lifetime;
   int? get secret_lifetime => _secret_lifetime;
   ParamsOfGetEncryptionBoxFromCryptoBox({
     required int handle,
@@ -3454,7 +3454,7 @@ class ParamsOfGetEncryptionBoxFromCryptoBox extends TonSdkStructure {
 
 class RegisteredEncryptionBox extends TonSdkStructure {
   ///Handle of the encryption box.
-  late int? _handle;
+  int? _handle;
   int? get handle => _handle;
   RegisteredEncryptionBox({
     required int handle,
@@ -3520,7 +3520,7 @@ class ParamsOfAppSigningBox_Sign extends ParamsOfAppSigningBox {
   String? get type => _type;
 
   ///Data to sign encoded as base64
-  late String? _unsigned;
+  String? _unsigned;
   String? get unsigned => _unsigned;
   ParamsOfAppSigningBox_Sign({
     required String unsigned,
@@ -3571,7 +3571,7 @@ class ResultOfAppSigningBox_GetPublicKey extends ResultOfAppSigningBox {
   String? get type => _type;
 
   ///Signing box public key
-  late String? _public_key;
+  String? _public_key;
   String? get public_key => _public_key;
   ResultOfAppSigningBox_GetPublicKey({
     required String public_key,
@@ -3609,7 +3609,7 @@ class ResultOfAppSigningBox_Sign extends ResultOfAppSigningBox {
   String? get type => _type;
 
   ///Data signature encoded as hex
-  late String? _signature;
+  String? _signature;
   String? get signature => _signature;
   ResultOfAppSigningBox_Sign({
     required String signature,
@@ -3643,7 +3643,7 @@ class ResultOfAppSigningBox_Sign extends ResultOfAppSigningBox {
 
 class ResultOfSigningBoxGetPublicKey extends TonSdkStructure {
   ///Encoded with hex
-  late String? _pubkey;
+  String? _pubkey;
   String? get pubkey => _pubkey;
   ResultOfSigningBoxGetPublicKey({
     required String pubkey,
@@ -3670,11 +3670,11 @@ class ResultOfSigningBoxGetPublicKey extends TonSdkStructure {
 
 class ParamsOfSigningBoxSign extends TonSdkStructure {
   ///Signing Box handle.
-  late int? _signing_box;
+  int? _signing_box;
   int? get signing_box => _signing_box;
 
   ///Must be encoded with `base64`.
-  late String? _unsigned;
+  String? _unsigned;
   String? get unsigned => _unsigned;
   ParamsOfSigningBoxSign({
     required int signing_box,
@@ -3712,7 +3712,7 @@ class ParamsOfSigningBoxSign extends TonSdkStructure {
 
 class ResultOfSigningBoxSign extends TonSdkStructure {
   ///Encoded with `hex`.
-  late String? _signature;
+  String? _signature;
   String? get signature => _signature;
   ResultOfSigningBoxSign({
     required String signature,
@@ -3781,7 +3781,7 @@ class ParamsOfAppEncryptionBox_Encrypt extends ParamsOfAppEncryptionBox {
   String? get type => _type;
 
   ///Data, encoded in Base64
-  late String? _data;
+  String? _data;
   String? get data => _data;
   ParamsOfAppEncryptionBox_Encrypt({
     required String data,
@@ -3819,7 +3819,7 @@ class ParamsOfAppEncryptionBox_Decrypt extends ParamsOfAppEncryptionBox {
   String? get type => _type;
 
   ///Data, encoded in Base64
-  late String? _data;
+  String? _data;
   String? get data => _data;
   ParamsOfAppEncryptionBox_Decrypt({
     required String data,
@@ -3871,7 +3871,7 @@ abstract class ResultOfAppEncryptionBox extends TonSdkStructure {
 class ResultOfAppEncryptionBox_GetInfo extends ResultOfAppEncryptionBox {
   late String? _type;
   String? get type => _type;
-  late EncryptionBoxInfo? _info;
+  EncryptionBoxInfo? _info;
   EncryptionBoxInfo? get info => _info;
   ResultOfAppEncryptionBox_GetInfo({
     required EncryptionBoxInfo info,
@@ -3909,7 +3909,7 @@ class ResultOfAppEncryptionBox_Encrypt extends ResultOfAppEncryptionBox {
   String? get type => _type;
 
   ///Encrypted data, encoded in Base64
-  late String? _data;
+  String? _data;
   String? get data => _data;
   ResultOfAppEncryptionBox_Encrypt({
     required String data,
@@ -3947,7 +3947,7 @@ class ResultOfAppEncryptionBox_Decrypt extends ResultOfAppEncryptionBox {
   String? get type => _type;
 
   ///Decrypted data, encoded in Base64
-  late String? _data;
+  String? _data;
   String? get data => _data;
   ResultOfAppEncryptionBox_Decrypt({
     required String data,
@@ -3981,7 +3981,7 @@ class ResultOfAppEncryptionBox_Decrypt extends ResultOfAppEncryptionBox {
 
 class ParamsOfEncryptionBoxGetInfo extends TonSdkStructure {
   ///Encryption box handle
-  late int? _encryption_box;
+  int? _encryption_box;
   int? get encryption_box => _encryption_box;
   ParamsOfEncryptionBoxGetInfo({
     required int encryption_box,
@@ -4008,7 +4008,7 @@ class ParamsOfEncryptionBoxGetInfo extends TonSdkStructure {
 
 class ResultOfEncryptionBoxGetInfo extends TonSdkStructure {
   ///Encryption box information
-  late EncryptionBoxInfo? _info;
+  EncryptionBoxInfo? _info;
   EncryptionBoxInfo? get info => _info;
   ResultOfEncryptionBoxGetInfo({
     required EncryptionBoxInfo info,
@@ -4035,11 +4035,11 @@ class ResultOfEncryptionBoxGetInfo extends TonSdkStructure {
 
 class ParamsOfEncryptionBoxEncrypt extends TonSdkStructure {
   ///Encryption box handle
-  late int? _encryption_box;
+  int? _encryption_box;
   int? get encryption_box => _encryption_box;
 
   ///Data to be encrypted, encoded in Base64
-  late String? _data;
+  String? _data;
   String? get data => _data;
   ParamsOfEncryptionBoxEncrypt({
     required int encryption_box,
@@ -4077,7 +4077,7 @@ class ParamsOfEncryptionBoxEncrypt extends TonSdkStructure {
 
 class ResultOfEncryptionBoxEncrypt extends TonSdkStructure {
   ///Padded to cipher block size
-  late String? _data;
+  String? _data;
   String? get data => _data;
   ResultOfEncryptionBoxEncrypt({
     required String data,
@@ -4104,11 +4104,11 @@ class ResultOfEncryptionBoxEncrypt extends TonSdkStructure {
 
 class ParamsOfEncryptionBoxDecrypt extends TonSdkStructure {
   ///Encryption box handle
-  late int? _encryption_box;
+  int? _encryption_box;
   int? get encryption_box => _encryption_box;
 
   ///Data to be decrypted, encoded in Base64
-  late String? _data;
+  String? _data;
   String? get data => _data;
   ParamsOfEncryptionBoxDecrypt({
     required int encryption_box,
@@ -4146,7 +4146,7 @@ class ParamsOfEncryptionBoxDecrypt extends TonSdkStructure {
 
 class ResultOfEncryptionBoxDecrypt extends TonSdkStructure {
   ///Decrypted data, encoded in Base64.
-  late String? _data;
+  String? _data;
   String? get data => _data;
   ResultOfEncryptionBoxDecrypt({
     required String data,
@@ -4173,7 +4173,7 @@ class ResultOfEncryptionBoxDecrypt extends TonSdkStructure {
 
 class ParamsOfCreateEncryptionBox extends TonSdkStructure {
   ///Encryption algorithm specifier including cipher parameters (key, IV, etc)
-  late EncryptionAlgorithm? _algorithm;
+  EncryptionAlgorithm? _algorithm;
   EncryptionAlgorithm? get algorithm => _algorithm;
   ParamsOfCreateEncryptionBox({
     required EncryptionAlgorithm algorithm,

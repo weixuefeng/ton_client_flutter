@@ -60,27 +60,27 @@ class TvmErrorCode {
 
 class ExecutionOptions extends TonSdkStructure {
   ///boc with config
-  late String? _blockchain_config;
+  String? _blockchain_config;
   String? get blockchain_config => _blockchain_config;
 
   ///time that is used as transaction time
-  late int? _block_time;
+  int? _block_time;
   int? get block_time => _block_time;
 
   ///block logical time
-  late BigInt? _block_lt;
+  BigInt? _block_lt;
   BigInt? get block_lt => _block_lt;
 
   ///transaction logical time
-  late BigInt? _transaction_lt;
+  BigInt? _transaction_lt;
   BigInt? get transaction_lt => _transaction_lt;
 
   ///Overrides standard TVM behaviour. If set to `true` then CHKSIG always will return `true`.
-  late bool? _chksig_always_succeed;
+  bool? _chksig_always_succeed;
   bool? get chksig_always_succeed => _chksig_always_succeed;
 
   ///Signature ID to be used in signature verifying instructions when CapSignatureWithId capability is enabled
-  late int? _signature_id;
+  int? _signature_id;
   int? get signature_id => _signature_id;
   ExecutionOptions({
     String? blockchain_config,
@@ -209,11 +209,11 @@ class AccountForExecutor_Account extends AccountForExecutor {
   String? get type => _type;
 
   ///Encoded as base64.
-  late String? _boc;
+  String? _boc;
   String? get boc => _boc;
 
   ///Can be used to calculate transaction fees without balance check
-  late bool? _unlimited_balance;
+  bool? _unlimited_balance;
   bool? get unlimited_balance => _unlimited_balance;
   AccountForExecutor_Account({
     required String boc,
@@ -255,39 +255,39 @@ class AccountForExecutor_Account extends AccountForExecutor {
 
 class TransactionFees extends TonSdkStructure {
   ///Contains the same data as ext_in_msg_fee field
-  late BigInt? _in_msg_fwd_fee;
+  BigInt? _in_msg_fwd_fee;
   BigInt? get in_msg_fwd_fee => _in_msg_fwd_fee;
 
   ///Fee for account storage
-  late BigInt? _storage_fee;
+  BigInt? _storage_fee;
   BigInt? get storage_fee => _storage_fee;
 
   ///Fee for processing
-  late BigInt? _gas_fee;
+  BigInt? _gas_fee;
   BigInt? get gas_fee => _gas_fee;
 
   ///Contains the same data as total_fwd_fees field. Deprecated because of its confusing name, that is not the same with GraphQL API Transaction type's field.
-  late BigInt? _out_msgs_fwd_fee;
+  BigInt? _out_msgs_fwd_fee;
   BigInt? get out_msgs_fwd_fee => _out_msgs_fwd_fee;
 
   ///Contains the same data as account_fees field
-  late BigInt? _total_account_fees;
+  BigInt? _total_account_fees;
   BigInt? get total_account_fees => _total_account_fees;
 
   ///Deprecated because it means total value sent in the transaction, which does not relate to any fees.
-  late BigInt? _total_output;
+  BigInt? _total_output;
   BigInt? get total_output => _total_output;
 
   ///Fee for inbound external message import.
-  late BigInt? _ext_in_msg_fee;
+  BigInt? _ext_in_msg_fee;
   BigInt? get ext_in_msg_fee => _ext_in_msg_fee;
 
   ///Total fees the account pays for message forwarding
-  late BigInt? _total_fwd_fees;
+  BigInt? _total_fwd_fees;
   BigInt? get total_fwd_fees => _total_fwd_fees;
 
   ///Total account fees for the transaction execution. Compounds of storage_fee + gas_fee + ext_in_msg_fee + total_fwd_fees
-  late BigInt? _account_fees;
+  BigInt? _account_fees;
   BigInt? get account_fees => _account_fees;
   TransactionFees({
     required BigInt in_msg_fwd_fee,
@@ -403,31 +403,31 @@ class TransactionFees extends TonSdkStructure {
 
 class ParamsOfRunExecutor extends TonSdkStructure {
   ///Must be encoded as base64.
-  late String? _message;
+  String? _message;
   String? get message => _message;
 
   ///Account to run on executor
-  late AccountForExecutor? _account;
+  AccountForExecutor? _account;
   AccountForExecutor? get account => _account;
 
   ///Execution options.
-  late ExecutionOptions? _execution_options;
+  ExecutionOptions? _execution_options;
   ExecutionOptions? get execution_options => _execution_options;
 
   ///Contract ABI for decoding output messages
-  late Abi? _abi;
+  Abi? _abi;
   Abi? get abi => _abi;
 
   ///Skip transaction check flag
-  late bool? _skip_transaction_check;
+  bool? _skip_transaction_check;
   bool? get skip_transaction_check => _skip_transaction_check;
 
   ///The BOC itself returned if no cache type provided
-  late BocCacheType? _boc_cache;
+  BocCacheType? _boc_cache;
   BocCacheType? get boc_cache => _boc_cache;
 
   ///Empty string is returned if the flag is `false`
-  late bool? _return_updated_account;
+  bool? _return_updated_account;
   bool? get return_updated_account => _return_updated_account;
   ParamsOfRunExecutor({
     required String message,
@@ -510,23 +510,23 @@ class ResultOfRunExecutor extends TonSdkStructure {
   ///In addition to the regular transaction fields there is a
   ///`boc` field encoded with `base64` which contains source
   ///transaction BOC.
-  late dynamic? _transaction;
+  dynamic? _transaction;
   dynamic? get transaction => _transaction;
 
   ///Encoded as `base64`
-  late List<String>? _out_messages;
+  List<String>? _out_messages;
   List<String>? get out_messages => _out_messages;
 
   ///Optional decoded message bodies according to the optional `abi` parameter.
-  late DecodedOutput? _decoded;
+  DecodedOutput? _decoded;
   DecodedOutput? get decoded => _decoded;
 
   ///Encoded as `base64`
-  late String? _account;
+  String? _account;
   String? get account => _account;
 
   ///Transaction fees
-  late TransactionFees? _fees;
+  TransactionFees? _fees;
   TransactionFees? get fees => _fees;
   ResultOfRunExecutor({
     required dynamic transaction,
@@ -598,27 +598,27 @@ class ResultOfRunExecutor extends TonSdkStructure {
 
 class ParamsOfRunTvm extends TonSdkStructure {
   ///Must be encoded as base64.
-  late String? _message;
+  String? _message;
   String? get message => _message;
 
   ///Must be encoded as base64.
-  late String? _account;
+  String? _account;
   String? get account => _account;
 
   ///Execution options.
-  late ExecutionOptions? _execution_options;
+  ExecutionOptions? _execution_options;
   ExecutionOptions? get execution_options => _execution_options;
 
   ///Contract ABI for decoding output messages
-  late Abi? _abi;
+  Abi? _abi;
   Abi? get abi => _abi;
 
   ///The BOC itself returned if no cache type provided
-  late BocCacheType? _boc_cache;
+  BocCacheType? _boc_cache;
   BocCacheType? get boc_cache => _boc_cache;
 
   ///Empty string is returned if the flag is `false`
-  late bool? _return_updated_account;
+  bool? _return_updated_account;
   bool? get return_updated_account => _return_updated_account;
   ParamsOfRunTvm({
     required String message,
@@ -688,15 +688,15 @@ class ParamsOfRunTvm extends TonSdkStructure {
 
 class ResultOfRunTvm extends TonSdkStructure {
   ///Encoded as `base64`
-  late List<String>? _out_messages;
+  List<String>? _out_messages;
   List<String>? get out_messages => _out_messages;
 
   ///Optional decoded message bodies according to the optional `abi` parameter.
-  late DecodedOutput? _decoded;
+  DecodedOutput? _decoded;
   DecodedOutput? get decoded => _decoded;
 
   ///Encoded as `base64`. Attention! Only `account_state.storage.state.data` part of the BOC is updated.
-  late String? _account;
+  String? _account;
   String? get account => _account;
   ResultOfRunTvm({
     required List<String> out_messages,
@@ -746,26 +746,26 @@ class ResultOfRunTvm extends TonSdkStructure {
 
 class ParamsOfRunGet extends TonSdkStructure {
   ///Account BOC in `base64`
-  late String? _account;
+  String? _account;
   String? get account => _account;
 
   ///Function name
-  late String? _function_name;
+  String? _function_name;
   String? get function_name => _function_name;
 
   ///Input parameters
-  late dynamic? _input;
+  dynamic? _input;
   dynamic? get input => _input;
 
   ///Execution options
-  late ExecutionOptions? _execution_options;
+  ExecutionOptions? _execution_options;
   ExecutionOptions? get execution_options => _execution_options;
 
   ///Default is `false`. Input parameters may use any of lists representations
   ///If you receive this error on Web: "Runtime error. Unreachable code should not be executed...",
   ///set this flag to true.
   ///This may happen, for example, when elector contract contains too many participants
-  late bool? _tuple_list_as_array;
+  bool? _tuple_list_as_array;
   bool? get tuple_list_as_array => _tuple_list_as_array;
   ParamsOfRunGet({
     required String account,
@@ -828,7 +828,7 @@ class ParamsOfRunGet extends TonSdkStructure {
 
 class ResultOfRunGet extends TonSdkStructure {
   ///Values returned by get-method on stack
-  late dynamic? _output;
+  dynamic? _output;
   dynamic? get output => _output;
   ResultOfRunGet({
     required dynamic output,

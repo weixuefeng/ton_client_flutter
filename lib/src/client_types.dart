@@ -122,11 +122,11 @@ class ClientErrorCode {
 }
 
 class ClientError extends TonSdkStructure {
-  late int? _code;
+  int? _code;
   int? get code => _code;
-  late String? _message;
+  String? _message;
   String? get message => _message;
-  late dynamic? _data;
+  dynamic? _data;
   dynamic? get data => _data;
   ClientError({
     required int code,
@@ -171,21 +171,21 @@ class ClientError extends TonSdkStructure {
 }
 
 class ClientConfig extends TonSdkStructure {
-  late BindingConfig? _binding;
+  BindingConfig? _binding;
   BindingConfig? get binding => _binding;
-  late NetworkConfig? _network;
+  NetworkConfig? _network;
   NetworkConfig? get network => _network;
-  late CryptoConfig? _crypto;
+  CryptoConfig? _crypto;
   CryptoConfig? get crypto => _crypto;
-  late AbiConfig? _abi;
+  AbiConfig? _abi;
   AbiConfig? get abi => _abi;
-  late BocConfig? _boc;
+  BocConfig? _boc;
   BocConfig? get boc => _boc;
-  late ProofsConfig? _proofs;
+  ProofsConfig? _proofs;
   ProofsConfig? get proofs => _proofs;
 
   ///For file based storage is a folder name where SDK will store its data. For browser based is a browser async storage key prefix. Default (recommended) value is "~/.tonclient" for native environments and ".tonclient" for web-browser.
-  late String? _local_storage_path;
+  String? _local_storage_path;
   String? get local_storage_path => _local_storage_path;
   ClientConfig({
     BindingConfig? binding,
@@ -258,44 +258,44 @@ class ClientConfig extends TonSdkStructure {
 
 class NetworkConfig extends TonSdkStructure {
   ///**This field is deprecated, but left for backward-compatibility.** Evernode endpoint.
-  late String? _server_address;
+  String? _server_address;
   String? get server_address => _server_address;
 
   ///Any correct URL format can be specified, including IP addresses. This parameter is prevailing over `server_address`.
   ///Check the full list of [supported network endpoints](https://docs.evercloud.dev/products/evercloud/networks-endpoints).
-  late List<String>? _endpoints;
+  List<String>? _endpoints;
   List<String>? get endpoints => _endpoints;
 
   ///You must use `network.max_reconnect_timeout` that allows to specify maximum network resolving timeout.
-  late int? _network_retries_count;
+  int? _network_retries_count;
   int? get network_retries_count => _network_retries_count;
 
   ///Must be specified in milliseconds. Default is 120000 (2 min).
-  late int? _max_reconnect_timeout;
+  int? _max_reconnect_timeout;
   int? get max_reconnect_timeout => _max_reconnect_timeout;
 
   ///Deprecated
-  late int? _reconnect_timeout;
+  int? _reconnect_timeout;
   int? get reconnect_timeout => _reconnect_timeout;
 
   ///Default is 5.
-  late int? _message_retries_count;
+  int? _message_retries_count;
   int? get message_retries_count => _message_retries_count;
 
   ///Must be specified in milliseconds. Default is 40000 (40 sec).
-  late int? _message_processing_timeout;
+  int? _message_processing_timeout;
   int? get message_processing_timeout => _message_processing_timeout;
 
   ///Must be specified in milliseconds. Default is 40000 (40 sec).
-  late int? _wait_for_timeout;
+  int? _wait_for_timeout;
   int? get wait_for_timeout => _wait_for_timeout;
 
   ///**DEPRECATED**: This parameter was deprecated.
-  late int? _out_of_sync_threshold;
+  int? _out_of_sync_threshold;
   int? get out_of_sync_threshold => _out_of_sync_threshold;
 
   ///Default is 1.
-  late int? _sending_endpoint_count;
+  int? _sending_endpoint_count;
   int? get sending_endpoint_count => _sending_endpoint_count;
 
   ///Library periodically checks the current endpoint for blockchain data synchronization latency.
@@ -303,47 +303,47 @@ class NetworkConfig extends TonSdkStructure {
   ///then library selects another endpoint.
   ///
   ///Must be specified in milliseconds. Default is 60000 (1 min).
-  late int? _latency_detection_interval;
+  int? _latency_detection_interval;
   int? get latency_detection_interval => _latency_detection_interval;
 
   ///Must be specified in milliseconds. Default is 60000 (1 min).
-  late int? _max_latency;
+  int? _max_latency;
   int? get max_latency => _max_latency;
 
   ///Is is used when no timeout specified for the request to limit the answer waiting time. If no answer received during the timeout requests ends with
   ///error.
   ///
   ///Must be specified in milliseconds. Default is 60000 (1 min).
-  late int? _query_timeout;
+  int? _query_timeout;
   int? get query_timeout => _query_timeout;
 
   ///`HTTP` or `WS`.
   ///Default is `HTTP`.
-  late NetworkQueriesProtocol? _queries_protocol;
+  NetworkQueriesProtocol? _queries_protocol;
   NetworkQueriesProtocol? get queries_protocol => _queries_protocol;
 
   ///First REMP status awaiting timeout. If no status received during the timeout than fallback transaction scenario is activated.
   ///
   ///Must be specified in milliseconds. Default is 1 (1 ms) in order to start fallback scenario
   ///together with REMP statuses processing while REMP is not properly tuned yet.
-  late int? _first_remp_status_timeout;
+  int? _first_remp_status_timeout;
   int? get first_remp_status_timeout => _first_remp_status_timeout;
 
   ///Subsequent REMP status awaiting timeout. If no status received during the timeout than fallback transaction scenario is activated.
   ///
   ///Must be specified in milliseconds. Default is 5000 (5 sec).
-  late int? _next_remp_status_timeout;
+  int? _next_remp_status_timeout;
   int? get next_remp_status_timeout => _next_remp_status_timeout;
 
   ///This parameter should be set to `global_id` field from any blockchain block if network can
   ///not be reachable at the moment of message encoding and the message is aimed to be sent into
   ///network with `CapSignatureWithId` enabled. Otherwise signature ID is detected automatically
   ///inside message encoding functions
-  late int? _signature_id;
+  int? _signature_id;
   int? get signature_id => _signature_id;
 
   ///Access key to GraphQL API (Project secret)
-  late String? _access_key;
+  String? _access_key;
   String? get access_key => _access_key;
   NetworkConfig({
     String? server_address,
@@ -520,9 +520,9 @@ class NetworkConfig extends TonSdkStructure {
 }
 
 class BindingConfig extends TonSdkStructure {
-  late String? _library;
+  String? _library;
   String? get library => _library;
-  late String? _version;
+  String? _version;
   String? get version => _version;
   BindingConfig({
     String? library,
@@ -579,15 +579,15 @@ class NetworkQueriesProtocol {
 ///Crypto config.
 class CryptoConfig extends TonSdkStructure {
   ///Mnemonic dictionary that will be used by default in crypto functions. If not specified, `English` dictionary will be used.
-  late MnemonicDictionary? _mnemonic_dictionary;
+  MnemonicDictionary? _mnemonic_dictionary;
   MnemonicDictionary? get mnemonic_dictionary => _mnemonic_dictionary;
 
   ///Mnemonic word count that will be used by default in crypto functions. If not specified the default value will be 12.
-  late int? _mnemonic_word_count;
+  int? _mnemonic_word_count;
   int? get mnemonic_word_count => _mnemonic_word_count;
 
   ///Derivation path that will be used by default in crypto functions. If not specified `m/44'/396'/0'/0/0` will be used.
-  late String? _hdkey_derivation_path;
+  String? _hdkey_derivation_path;
   String? get hdkey_derivation_path => _hdkey_derivation_path;
   CryptoConfig({
     MnemonicDictionary? mnemonic_dictionary,
@@ -631,15 +631,15 @@ class CryptoConfig extends TonSdkStructure {
 
 class AbiConfig extends TonSdkStructure {
   ///Workchain id that is used by default in DeploySet
-  late int? _workchain;
+  int? _workchain;
   int? get workchain => _workchain;
 
   ///Must be specified in milliseconds. Default is 40000 (40 sec).
-  late int? _message_expiration_timeout;
+  int? _message_expiration_timeout;
   int? get message_expiration_timeout => _message_expiration_timeout;
 
   ///Default is 1.5
-  late int? _message_expiration_timeout_grow_factor;
+  int? _message_expiration_timeout_grow_factor;
   int? get message_expiration_timeout_grow_factor =>
       _message_expiration_timeout_grow_factor;
   AbiConfig({
@@ -685,7 +685,7 @@ class AbiConfig extends TonSdkStructure {
 
 class BocConfig extends TonSdkStructure {
   ///Default is 10 MB
-  late int? _cache_max_size;
+  int? _cache_max_size;
   int? get cache_max_size => _cache_max_size;
   BocConfig({
     int? cache_max_size,
@@ -712,7 +712,7 @@ class ProofsConfig extends TonSdkStructure {
   ///persistent local storage (e.g. file system for native environments or browser's IndexedDB
   ///for the web); otherwise all the data is cached only in memory in current client's context
   ///and will be lost after destruction of the client.
-  late bool? _cache_in_local_storage;
+  bool? _cache_in_local_storage;
   bool? get cache_in_local_storage => _cache_in_local_storage;
   ProofsConfig({
     bool? cache_in_local_storage,
@@ -737,11 +737,11 @@ class ProofsConfig extends TonSdkStructure {
 
 class BuildInfoDependency extends TonSdkStructure {
   ///Usually it is a crate name.
-  late String? _name;
+  String? _name;
   String? get name => _name;
 
   ///Git commit hash of the related repository.
-  late String? _git_commit;
+  String? _git_commit;
   String? get git_commit => _git_commit;
   BuildInfoDependency({
     required String name,
@@ -778,11 +778,11 @@ class BuildInfoDependency extends TonSdkStructure {
 
 class ParamsOfAppRequest extends TonSdkStructure {
   ///Should be used in `resolve_app_request` call
-  late int? _app_request_id;
+  int? _app_request_id;
   int? get app_request_id => _app_request_id;
 
   ///Request describing data
-  late dynamic? _request_data;
+  dynamic? _request_data;
   dynamic? get request_data => _request_data;
   ParamsOfAppRequest({
     required int app_request_id,
@@ -836,7 +836,7 @@ class AppRequestResult_Error extends AppRequestResult {
   String? get type => _type;
 
   ///Error description
-  late String? _text;
+  String? _text;
   String? get text => _text;
   AppRequestResult_Error({
     required String text,
@@ -873,7 +873,7 @@ class AppRequestResult_Ok extends AppRequestResult {
   String? get type => _type;
 
   ///Request processing result
-  late dynamic? _result;
+  dynamic? _result;
   dynamic? get result => _result;
   AppRequestResult_Ok({
     required dynamic result,
@@ -905,7 +905,7 @@ class AppRequestResult_Ok extends AppRequestResult {
 }
 
 class ResultOfGetApiReference extends TonSdkStructure {
-  late dynamic? _api;
+  dynamic? _api;
   dynamic? get api => _api;
   ResultOfGetApiReference({
     required dynamic api,
@@ -931,7 +931,7 @@ class ResultOfGetApiReference extends TonSdkStructure {
 
 class ResultOfVersion extends TonSdkStructure {
   ///Core Library version
-  late String? _version;
+  String? _version;
   String? get version => _version;
   ResultOfVersion({
     required String version,
@@ -957,11 +957,11 @@ class ResultOfVersion extends TonSdkStructure {
 
 class ResultOfBuildInfo extends TonSdkStructure {
   ///Build number assigned to this build by the CI.
-  late int? _build_number;
+  int? _build_number;
   int? get build_number => _build_number;
 
   ///Fingerprint of the most important dependencies.
-  late List<BuildInfoDependency>? _dependencies;
+  List<BuildInfoDependency>? _dependencies;
   List<BuildInfoDependency>? get dependencies => _dependencies;
   ResultOfBuildInfo({
     required int build_number,
@@ -1004,11 +1004,11 @@ class ResultOfBuildInfo extends TonSdkStructure {
 
 class ParamsOfResolveAppRequest extends TonSdkStructure {
   ///Request ID received from SDK
-  late int? _app_request_id;
+  int? _app_request_id;
   int? get app_request_id => _app_request_id;
 
   ///Result of request processing
-  late AppRequestResult? _result;
+  AppRequestResult? _result;
   AppRequestResult? get result => _result;
   ParamsOfResolveAppRequest({
     required int app_request_id,

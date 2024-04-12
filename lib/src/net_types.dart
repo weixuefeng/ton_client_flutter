@@ -68,9 +68,9 @@ class NetErrorCode {
 }
 
 class OrderBy extends TonSdkStructure {
-  late String? _path;
+  String? _path;
   String? get path => _path;
-  late SortDirection? _direction;
+  SortDirection? _direction;
   SortDirection? get direction => _direction;
   OrderBy({
     required String path,
@@ -146,23 +146,23 @@ class ParamsOfQueryOperation_QueryCollection extends ParamsOfQueryOperation {
   String? get type => _type;
 
   ///Collection name (accounts, blocks, transactions, messages, block_signatures)
-  late String? _collection;
+  String? _collection;
   String? get collection => _collection;
 
   ///Collection filter
-  late dynamic? _filter;
+  dynamic? _filter;
   dynamic? get filter => _filter;
 
   ///Projection (result) string
-  late String? _result;
+  String? _result;
   String? get result => _result;
 
   ///Sorting order
-  late List<OrderBy>? _order;
+  List<OrderBy>? _order;
   List<OrderBy>? get order => _order;
 
   ///Number of documents to return
-  late int? _limit;
+  int? _limit;
   int? get limit => _limit;
   ParamsOfQueryOperation_QueryCollection({
     required String collection,
@@ -239,19 +239,19 @@ class ParamsOfQueryOperation_WaitForCollection extends ParamsOfQueryOperation {
   String? get type => _type;
 
   ///Collection name (accounts, blocks, transactions, messages, block_signatures)
-  late String? _collection;
+  String? _collection;
   String? get collection => _collection;
 
   ///Collection filter
-  late dynamic? _filter;
+  dynamic? _filter;
   dynamic? get filter => _filter;
 
   ///Projection (result) string
-  late String? _result;
+  String? _result;
   String? get result => _result;
 
   ///Query timeout
-  late int? _timeout;
+  int? _timeout;
   int? get timeout => _timeout;
   ParamsOfQueryOperation_WaitForCollection({
     required String collection,
@@ -316,15 +316,15 @@ class ParamsOfQueryOperation_AggregateCollection
   String? get type => _type;
 
   ///Collection name (accounts, blocks, transactions, messages, block_signatures)
-  late String? _collection;
+  String? _collection;
   String? get collection => _collection;
 
   ///Collection filter
-  late dynamic? _filter;
+  dynamic? _filter;
   dynamic? get filter => _filter;
 
   ///Projection (result) string
-  late List<FieldAggregation>? _fields;
+  List<FieldAggregation>? _fields;
   List<FieldAggregation>? get fields => _fields;
   ParamsOfQueryOperation_AggregateCollection({
     required String collection,
@@ -383,19 +383,19 @@ class ParamsOfQueryOperation_QueryCounterparties
   String? get type => _type;
 
   ///Account address
-  late String? _account;
+  String? _account;
   String? get account => _account;
 
   ///Projection (result) string
-  late String? _result;
+  String? _result;
   String? get result => _result;
 
   ///Number of counterparties to return
-  late int? _first;
+  int? _first;
   int? get first => _first;
 
   ///`cursor` field of the last received result
-  late String? _after;
+  String? _after;
   String? get after => _after;
   ParamsOfQueryOperation_QueryCounterparties({
     required String account,
@@ -456,11 +456,11 @@ class ParamsOfQueryOperation_QueryCounterparties
 
 class FieldAggregation extends TonSdkStructure {
   ///Dot separated path to the field
-  late String? _field;
+  String? _field;
   String? get field => _field;
 
   ///Aggregation function that must be applied to field values
-  late AggregationFn? _fn;
+  AggregationFn? _fn;
   AggregationFn? get fn => _fn;
   FieldAggregation({
     required String field,
@@ -534,31 +534,31 @@ class AggregationFn {
 
 class TransactionNode extends TonSdkStructure {
   ///Transaction id.
-  late String? _id;
+  String? _id;
   String? get id => _id;
 
   ///In message id.
-  late String? _in_msg;
+  String? _in_msg;
   String? get in_msg => _in_msg;
 
   ///Out message ids.
-  late List<String>? _out_msgs;
+  List<String>? _out_msgs;
   List<String>? get out_msgs => _out_msgs;
 
   ///Account address.
-  late String? _account_addr;
+  String? _account_addr;
   String? get account_addr => _account_addr;
 
   ///Transactions total fees.
-  late String? _total_fees;
+  String? _total_fees;
   String? get total_fees => _total_fees;
 
   ///Aborted flag.
-  late bool? _aborted;
+  bool? _aborted;
   bool? get aborted => _aborted;
 
   ///Compute phase exit code.
-  late int? _exit_code;
+  int? _exit_code;
   int? get exit_code => _exit_code;
   TransactionNode({
     required String id,
@@ -650,36 +650,36 @@ class TransactionNode extends TonSdkStructure {
 
 class MessageNode extends TonSdkStructure {
   ///Message id.
-  late String? _id;
+  String? _id;
   String? get id => _id;
 
   ///This field is missing for an external inbound messages.
-  late String? _src_transaction_id;
+  String? _src_transaction_id;
   String? get src_transaction_id => _src_transaction_id;
 
   ///This field is missing for an external outbound messages.
-  late String? _dst_transaction_id;
+  String? _dst_transaction_id;
   String? get dst_transaction_id => _dst_transaction_id;
 
   ///Source address.
-  late String? _src;
+  String? _src;
   String? get src => _src;
 
   ///Destination address.
-  late String? _dst;
+  String? _dst;
   String? get dst => _dst;
 
   ///Transferred tokens value.
-  late String? _value;
+  String? _value;
   String? get value => _value;
 
   ///Bounce flag.
-  late bool? _bounce;
+  bool? _bounce;
   bool? get bounce => _bounce;
 
   ///Library tries to decode message body using provided `params.abi_registry`.
   ///This field will be missing if none of the provided abi can be used to decode.
-  late DecodedMessageBody? _decoded_body;
+  DecodedMessageBody? _decoded_body;
   DecodedMessageBody? get decoded_body => _decoded_body;
   MessageNode({
     required String id,
@@ -765,11 +765,11 @@ class MessageNode extends TonSdkStructure {
 
 class ParamsOfQuery extends TonSdkStructure {
   ///GraphQL query text.
-  late String? _query;
+  String? _query;
   String? get query => _query;
 
   ///Must be a map with named values that can be used in query.
-  late dynamic? _variables;
+  dynamic? _variables;
   dynamic? get variables => _variables;
   ParamsOfQuery({
     required String query,
@@ -803,7 +803,7 @@ class ParamsOfQuery extends TonSdkStructure {
 
 class ResultOfQuery extends TonSdkStructure {
   ///Result provided by DAppServer.
-  late dynamic? _result;
+  dynamic? _result;
   dynamic? get result => _result;
   ResultOfQuery({
     required dynamic result,
@@ -829,7 +829,7 @@ class ResultOfQuery extends TonSdkStructure {
 
 class ParamsOfBatchQuery extends TonSdkStructure {
   ///List of query operations that must be performed per single fetch.
-  late List<ParamsOfQueryOperation>? _operations;
+  List<ParamsOfQueryOperation>? _operations;
   List<ParamsOfQueryOperation>? get operations => _operations;
   ParamsOfBatchQuery({
     required List<ParamsOfQueryOperation> operations,
@@ -861,7 +861,7 @@ class ParamsOfBatchQuery extends TonSdkStructure {
 
 class ResultOfBatchQuery extends TonSdkStructure {
   ///Returns an array of values. Each value corresponds to `queries` item.
-  late List<dynamic>? _results;
+  List<dynamic>? _results;
   List<dynamic>? get results => _results;
   ResultOfBatchQuery({
     required List<dynamic> results,
@@ -893,23 +893,23 @@ class ResultOfBatchQuery extends TonSdkStructure {
 
 class ParamsOfQueryCollection extends TonSdkStructure {
   ///Collection name (accounts, blocks, transactions, messages, block_signatures)
-  late String? _collection;
+  String? _collection;
   String? get collection => _collection;
 
   ///Collection filter
-  late dynamic? _filter;
+  dynamic? _filter;
   dynamic? get filter => _filter;
 
   ///Projection (result) string
-  late String? _result;
+  String? _result;
   String? get result => _result;
 
   ///Sorting order
-  late List<OrderBy>? _order;
+  List<OrderBy>? _order;
   List<OrderBy>? get order => _order;
 
   ///Number of documents to return
-  late int? _limit;
+  int? _limit;
   int? get limit => _limit;
   ParamsOfQueryCollection({
     required String collection,
@@ -976,7 +976,7 @@ class ParamsOfQueryCollection extends TonSdkStructure {
 
 class ResultOfQueryCollection extends TonSdkStructure {
   ///Objects that match the provided criteria
-  late List<dynamic>? _result;
+  List<dynamic>? _result;
   List<dynamic>? get result => _result;
   ResultOfQueryCollection({
     required List<dynamic> result,
@@ -1008,15 +1008,15 @@ class ResultOfQueryCollection extends TonSdkStructure {
 
 class ParamsOfAggregateCollection extends TonSdkStructure {
   ///Collection name (accounts, blocks, transactions, messages, block_signatures)
-  late String? _collection;
+  String? _collection;
   String? get collection => _collection;
 
   ///Collection filter
-  late dynamic? _filter;
+  dynamic? _filter;
   dynamic? get filter => _filter;
 
   ///Projection (result) string
-  late List<FieldAggregation>? _fields;
+  List<FieldAggregation>? _fields;
   List<FieldAggregation>? get fields => _fields;
   ParamsOfAggregateCollection({
     required String collection,
@@ -1065,7 +1065,7 @@ class ParamsOfAggregateCollection extends TonSdkStructure {
 class ResultOfAggregateCollection extends TonSdkStructure {
   ///Returns an array of strings. Each string refers to the corresponding `fields` item.
   ///Numeric value is returned as a decimal string representations.
-  late dynamic? _values;
+  dynamic? _values;
   dynamic? get values => _values;
   ResultOfAggregateCollection({
     required dynamic values,
@@ -1092,19 +1092,19 @@ class ResultOfAggregateCollection extends TonSdkStructure {
 
 class ParamsOfWaitForCollection extends TonSdkStructure {
   ///Collection name (accounts, blocks, transactions, messages, block_signatures)
-  late String? _collection;
+  String? _collection;
   String? get collection => _collection;
 
   ///Collection filter
-  late dynamic? _filter;
+  dynamic? _filter;
   dynamic? get filter => _filter;
 
   ///Projection (result) string
-  late String? _result;
+  String? _result;
   String? get result => _result;
 
   ///Query timeout
-  late int? _timeout;
+  int? _timeout;
   int? get timeout => _timeout;
   ParamsOfWaitForCollection({
     required String collection,
@@ -1158,7 +1158,7 @@ class ParamsOfWaitForCollection extends TonSdkStructure {
 
 class ResultOfWaitForCollection extends TonSdkStructure {
   ///First found object that matches the provided criteria
-  late dynamic? _result;
+  dynamic? _result;
   dynamic? get result => _result;
   ResultOfWaitForCollection({
     required dynamic result,
@@ -1185,7 +1185,7 @@ class ResultOfWaitForCollection extends TonSdkStructure {
 
 class ResultOfSubscribeCollection extends TonSdkStructure {
   ///Must be closed with `unsubscribe`
-  late int? _handle;
+  int? _handle;
   int? get handle => _handle;
   ResultOfSubscribeCollection({
     required int handle,
@@ -1212,15 +1212,15 @@ class ResultOfSubscribeCollection extends TonSdkStructure {
 
 class ParamsOfSubscribeCollection extends TonSdkStructure {
   ///Collection name (accounts, blocks, transactions, messages, block_signatures)
-  late String? _collection;
+  String? _collection;
   String? get collection => _collection;
 
   ///Collection filter
-  late dynamic? _filter;
+  dynamic? _filter;
   dynamic? get filter => _filter;
 
   ///Projection (result) string
-  late String? _result;
+  String? _result;
   String? get result => _result;
   ParamsOfSubscribeCollection({
     required String collection,
@@ -1266,11 +1266,11 @@ class ParamsOfSubscribeCollection extends TonSdkStructure {
 
 class ParamsOfSubscribe extends TonSdkStructure {
   ///GraphQL subscription text.
-  late String? _subscription;
+  String? _subscription;
   String? get subscription => _subscription;
 
   ///Must be a map with named values that can be used in query.
-  late dynamic? _variables;
+  dynamic? _variables;
   dynamic? get variables => _variables;
   ParamsOfSubscribe({
     required String subscription,
@@ -1305,7 +1305,7 @@ class ParamsOfSubscribe extends TonSdkStructure {
 
 class ParamsOfFindLastShardBlock extends TonSdkStructure {
   ///Account address
-  late String? _address;
+  String? _address;
   String? get address => _address;
   ParamsOfFindLastShardBlock({
     required String address,
@@ -1332,7 +1332,7 @@ class ParamsOfFindLastShardBlock extends TonSdkStructure {
 
 class ResultOfFindLastShardBlock extends TonSdkStructure {
   ///Account shard last block ID
-  late String? _block_id;
+  String? _block_id;
   String? get block_id => _block_id;
   ResultOfFindLastShardBlock({
     required String block_id,
@@ -1359,7 +1359,7 @@ class ResultOfFindLastShardBlock extends TonSdkStructure {
 
 class EndpointsSet extends TonSdkStructure {
   ///List of endpoints provided by server
-  late List<String>? _endpoints;
+  List<String>? _endpoints;
   List<String>? get endpoints => _endpoints;
   EndpointsSet({
     required List<String> endpoints,
@@ -1391,11 +1391,11 @@ class EndpointsSet extends TonSdkStructure {
 
 class ResultOfGetEndpoints extends TonSdkStructure {
   ///Current query endpoint
-  late String? _query;
+  String? _query;
   String? get query => _query;
 
   ///List of all endpoints used by client
-  late List<String>? _endpoints;
+  List<String>? _endpoints;
   List<String>? get endpoints => _endpoints;
   ResultOfGetEndpoints({
     required String query,
@@ -1437,19 +1437,19 @@ class ResultOfGetEndpoints extends TonSdkStructure {
 
 class ParamsOfQueryCounterparties extends TonSdkStructure {
   ///Account address
-  late String? _account;
+  String? _account;
   String? get account => _account;
 
   ///Projection (result) string
-  late String? _result;
+  String? _result;
   String? get result => _result;
 
   ///Number of counterparties to return
-  late int? _first;
+  int? _first;
   int? get first => _first;
 
   ///`cursor` field of the last received result
-  late String? _after;
+  String? _after;
   String? get after => _after;
   ParamsOfQueryCounterparties({
     required String account,
@@ -1503,11 +1503,11 @@ class ParamsOfQueryCounterparties extends TonSdkStructure {
 
 class ParamsOfQueryTransactionTree extends TonSdkStructure {
   ///Input message id.
-  late String? _in_msg;
+  String? _in_msg;
   String? get in_msg => _in_msg;
 
   ///List of contract ABIs that will be used to decode message bodies. Library will try to decode each returned message body using any ABI from the registry.
-  late List<Abi>? _abi_registry;
+  List<Abi>? _abi_registry;
   List<Abi>? get abi_registry => _abi_registry;
 
   ///If some of the following messages and transactions are missing yet
@@ -1515,14 +1515,14 @@ class ParamsOfQueryTransactionTree extends TonSdkStructure {
   ///
   ///Default value is 60000 (1 min). If `timeout` is set to 0 then function will wait infinitely
   ///until the whole transaction tree is executed
-  late int? _timeout;
+  int? _timeout;
   int? get timeout => _timeout;
 
   ///If transaction tree contains more transaction then this parameter then only first `transaction_max_count` transaction are awaited and returned.
   ///
   ///Default value is 50. If `transaction_max_count` is set to 0 then no limitation on
   ///transaction count is used and all transaction are returned.
-  late int? _transaction_max_count;
+  int? _transaction_max_count;
   int? get transaction_max_count => _transaction_max_count;
   ParamsOfQueryTransactionTree({
     required String in_msg,
@@ -1579,11 +1579,11 @@ class ParamsOfQueryTransactionTree extends TonSdkStructure {
 
 class ResultOfQueryTransactionTree extends TonSdkStructure {
   ///Messages.
-  late List<MessageNode>? _messages;
+  List<MessageNode>? _messages;
   List<MessageNode>? get messages => _messages;
 
   ///Transactions.
-  late List<TransactionNode>? _transactions;
+  List<TransactionNode>? _transactions;
   List<TransactionNode>? get transactions => _transactions;
   ResultOfQueryTransactionTree({
     required List<MessageNode> messages,
@@ -1635,7 +1635,7 @@ class ParamsOfCreateBlockIterator extends TonSdkStructure {
   ///Otherwise the iteration starts from zero state.
   ///
   ///Must be specified in seconds.
-  late int? _start_time;
+  int? _start_time;
   int? get start_time => _start_time;
 
   ///If the application specifies this parameter then the iteration
@@ -1643,7 +1643,7 @@ class ParamsOfCreateBlockIterator extends TonSdkStructure {
   ///Otherwise the iteration never stops.
   ///
   ///Must be specified in seconds.
-  late int? _end_time;
+  int? _end_time;
   int? get end_time => _end_time;
 
   ///If the application specifies this parameter and it is not the empty array
@@ -1653,7 +1653,7 @@ class ParamsOfCreateBlockIterator extends TonSdkStructure {
   ///Where `workchain` is a signed integer and the `prefix` if a hexadecimal
   ///representation if the 64-bit unsigned integer with tagged shard prefix.
   ///For example: "0:3800000000000000".
-  late List<String>? _shard_filter;
+  List<String>? _shard_filter;
   List<String>? get shard_filter => _shard_filter;
 
   ///List of the fields that must be returned for iterated items.
@@ -1661,7 +1661,7 @@ class ParamsOfCreateBlockIterator extends TonSdkStructure {
   ///the `query_collection` function.
   ///Note that iterated items can contains additional fields that are
   ///not requested in the `result`.
-  late String? _result;
+  String? _result;
   String? get result => _result;
   ParamsOfCreateBlockIterator({
     int? start_time,
@@ -1715,7 +1715,7 @@ class ParamsOfCreateBlockIterator extends TonSdkStructure {
 class RegisteredIterator extends TonSdkStructure {
   ///Must be removed using `remove_iterator`
   ///when it is no more needed for the application.
-  late int? _handle;
+  int? _handle;
   int? get handle => _handle;
   RegisteredIterator({
     required int handle,
@@ -1741,7 +1741,7 @@ class RegisteredIterator extends TonSdkStructure {
 
 class ParamsOfResumeBlockIterator extends TonSdkStructure {
   ///Same as value returned from `iterator_next`.
-  late dynamic? _resume_state;
+  dynamic? _resume_state;
   dynamic? get resume_state => _resume_state;
   ParamsOfResumeBlockIterator({
     required dynamic resume_state,
@@ -1772,7 +1772,7 @@ class ParamsOfCreateTransactionIterator extends TonSdkStructure {
   ///Otherwise the iteration starts from zero state.
   ///
   ///Must be specified in seconds.
-  late int? _start_time;
+  int? _start_time;
   int? get start_time => _start_time;
 
   ///If the application specifies this parameter then the iteration
@@ -1780,7 +1780,7 @@ class ParamsOfCreateTransactionIterator extends TonSdkStructure {
   ///Otherwise the iteration never stops.
   ///
   ///Must be specified in seconds.
-  late int? _end_time;
+  int? _end_time;
   int? get end_time => _end_time;
 
   ///If the application specifies this parameter and it is not an empty array
@@ -1793,7 +1793,7 @@ class ParamsOfCreateTransactionIterator extends TonSdkStructure {
   ///Account address conforms to the shard filter if
   ///it belongs to the filter workchain and the first bits of address match to
   ///the shard prefix. Only transactions with suitable account addresses are iterated.
-  late List<String>? _shard_filter;
+  List<String>? _shard_filter;
   List<String>? get shard_filter => _shard_filter;
 
   ///Application can specify the list of accounts for which
@@ -1805,7 +1805,7 @@ class ParamsOfCreateTransactionIterator extends TonSdkStructure {
   ///Note that the library doesn't detect conflicts between the account filter and the shard filter
   ///if both are specified.
   ///So it is an application responsibility to specify the correct filter combination.
-  late List<String>? _accounts_filter;
+  List<String>? _accounts_filter;
   List<String>? get accounts_filter => _accounts_filter;
 
   ///List of the fields that must be returned for iterated items.
@@ -1813,12 +1813,12 @@ class ParamsOfCreateTransactionIterator extends TonSdkStructure {
   ///the `query_collection` function.
   ///Note that iterated items can contain additional fields that are
   ///not requested in the `result`.
-  late String? _result;
+  String? _result;
   String? get result => _result;
 
   ///If this parameter is `true` then each transaction contains field
   ///`transfers` with list of transfer. See more about this structure in function description.
-  late bool? _include_transfers;
+  bool? _include_transfers;
   bool? get include_transfers => _include_transfers;
   ParamsOfCreateTransactionIterator({
     int? start_time,
@@ -1894,7 +1894,7 @@ class ParamsOfCreateTransactionIterator extends TonSdkStructure {
 
 class ParamsOfResumeTransactionIterator extends TonSdkStructure {
   ///Same as value returned from `iterator_next`.
-  late dynamic? _resume_state;
+  dynamic? _resume_state;
   dynamic? get resume_state => _resume_state;
 
   ///Application can specify the list of accounts for which
@@ -1906,7 +1906,7 @@ class ParamsOfResumeTransactionIterator extends TonSdkStructure {
   ///Note that the library doesn't detect conflicts between the account filter and the shard filter
   ///if both are specified.
   ///So it is the application's responsibility to specify the correct filter combination.
-  late List<String>? _accounts_filter;
+  List<String>? _accounts_filter;
   List<String>? get accounts_filter => _accounts_filter;
   ParamsOfResumeTransactionIterator({
     required dynamic resume_state,
@@ -1947,15 +1947,15 @@ class ParamsOfResumeTransactionIterator extends TonSdkStructure {
 
 class ParamsOfIteratorNext extends TonSdkStructure {
   ///Iterator handle
-  late int? _iterator;
+  int? _iterator;
   int? get iterator => _iterator;
 
   ///If value is missing or is less than 1 the library uses 1.
-  late int? _limit;
+  int? _limit;
   int? get limit => _limit;
 
   ///Indicates that function must return the iterator state that can be used for resuming iteration.
-  late bool? _return_resume_state;
+  bool? _return_resume_state;
   bool? get return_resume_state => _return_resume_state;
   ParamsOfIteratorNext({
     required int iterator,
@@ -2002,11 +2002,11 @@ class ResultOfIteratorNext extends TonSdkStructure {
   ///In this case the application have to continue iteration.
   ///Such situation can take place when there is no data yet but
   ///the requested `end_time` is not reached.
-  late List<dynamic>? _items;
+  List<dynamic>? _items;
   List<dynamic>? get items => _items;
 
   ///Indicates that there are more available items in iterated range.
-  late bool? _has_more;
+  bool? _has_more;
   bool? get has_more => _has_more;
 
   ///This field is returned only if the `return_resume_state` parameter
@@ -2014,7 +2014,7 @@ class ResultOfIteratorNext extends TonSdkStructure {
   ///
   ///Note that `resume_state` corresponds to the iteration position
   ///after the returned items.
-  late dynamic? _resume_state;
+  dynamic? _resume_state;
   dynamic? get resume_state => _resume_state;
   ResultOfIteratorNext({
     required List<dynamic> items,
@@ -2064,7 +2064,7 @@ class ResultOfIteratorNext extends TonSdkStructure {
 
 class ResultOfGetSignatureId extends TonSdkStructure {
   ///Signature ID for configured network if it should be used in messages signature
-  late int? _signature_id;
+  int? _signature_id;
   int? get signature_id => _signature_id;
   ResultOfGetSignatureId({
     int? signature_id,

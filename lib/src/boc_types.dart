@@ -18,7 +18,7 @@ abstract class BocCacheType extends TonSdkStructure {
 class BocCacheType_Pinned extends BocCacheType {
   late String? _type;
   String? get type => _type;
-  late String? _pin;
+  String? _pin;
   String? get pin => _pin;
   BocCacheType_Pinned({
     required String pin,
@@ -99,13 +99,13 @@ class BuilderOp_Integer extends BuilderOp {
   String? get type => _type;
 
   ///Bit size of the value.
-  late int? _size;
+  int? _size;
   int? get size => _size;
 
   ///e.g. `123`, `-123`. - Decimal string. e.g. `"123"`, `"-123"`.
   ///- `0x` prefixed hexadecimal string.
   ///  e.g `0x123`, `0X123`, `-0x123`.
-  late dynamic? _value;
+  dynamic? _value;
   dynamic? get value => _value;
   BuilderOp_Integer({
     required int size,
@@ -163,7 +163,7 @@ class BuilderOp_BitString extends BuilderOp {
   ///`1AB`, `x1ab`, `X1AB`, `x{1abc}`, `X{1ABC}`
   ///`2D9_`, `x2D9_`, `X2D9_`, `x{2D9_}`, `X{2D9_}`
   ///`n00101101100`, `N00101101100`
-  late String? _value;
+  String? _value;
   String? get value => _value;
   BuilderOp_BitString({
     required String value,
@@ -200,7 +200,7 @@ class BuilderOp_Cell extends BuilderOp {
   String? get type => _type;
 
   ///Nested cell builder.
-  late List<BuilderOp>? _builder;
+  List<BuilderOp>? _builder;
   List<BuilderOp>? get builder => _builder;
   BuilderOp_Cell({
     required List<BuilderOp> builder,
@@ -242,7 +242,7 @@ class BuilderOp_CellBoc extends BuilderOp {
   String? get type => _type;
 
   ///Nested cell BOC encoded with `base64` or BOC cache key.
-  late String? _boc;
+  String? _boc;
   String? get boc => _boc;
   BuilderOp_CellBoc({
     required String boc,
@@ -279,7 +279,7 @@ class BuilderOp_Address extends BuilderOp {
   String? get type => _type;
 
   ///Address in a common `workchain:account` or base64 format.
-  late String? _address;
+  String? _address;
   String? get address => _address;
   BuilderOp_Address({
     required String address,
@@ -322,7 +322,7 @@ abstract class Tvc extends TonSdkStructure {
 class Tvc_V1 extends Tvc {
   late String? _type;
   String? get type => _type;
-  late TvcV1? _value;
+  TvcV1? _value;
   TvcV1? get value => _value;
   Tvc_V1({
     required TvcV1 value,
@@ -354,9 +354,9 @@ class Tvc_V1 extends Tvc {
 }
 
 class TvcV1 extends TonSdkStructure {
-  late String? _code;
+  String? _code;
   String? get code => _code;
-  late String? _description;
+  String? _description;
   String? get description => _description;
   TvcV1({
     String? code,
@@ -422,7 +422,7 @@ class BocErrorCode {
 
 class ParamsOfDecodeTvc extends TonSdkStructure {
   ///Contract TVC BOC encoded as base64 or BOC handle
-  late String? _tvc;
+  String? _tvc;
   String? get tvc => _tvc;
   ParamsOfDecodeTvc({
     required String tvc,
@@ -448,7 +448,7 @@ class ParamsOfDecodeTvc extends TonSdkStructure {
 
 class ResultOfDecodeTvc extends TonSdkStructure {
   ///Decoded TVC
-  late Tvc? _tvc;
+  Tvc? _tvc;
   Tvc? get tvc => _tvc;
   ResultOfDecodeTvc({
     required Tvc tvc,
@@ -474,7 +474,7 @@ class ResultOfDecodeTvc extends TonSdkStructure {
 
 class ParamsOfParse extends TonSdkStructure {
   ///BOC encoded as base64
-  late String? _boc;
+  String? _boc;
   String? get boc => _boc;
   ParamsOfParse({
     required String boc,
@@ -500,7 +500,7 @@ class ParamsOfParse extends TonSdkStructure {
 
 class ResultOfParse extends TonSdkStructure {
   ///JSON containing parsed BOC
-  late dynamic? _parsed;
+  dynamic? _parsed;
   dynamic? get parsed => _parsed;
   ResultOfParse({
     required dynamic parsed,
@@ -526,15 +526,15 @@ class ResultOfParse extends TonSdkStructure {
 
 class ParamsOfParseShardstate extends TonSdkStructure {
   ///BOC encoded as base64
-  late String? _boc;
+  String? _boc;
   String? get boc => _boc;
 
   ///Shardstate identifier
-  late String? _id;
+  String? _id;
   String? get id => _id;
 
   ///Workchain shardstate belongs to
-  late int? _workchain_id;
+  int? _workchain_id;
   int? get workchain_id => _workchain_id;
   ParamsOfParseShardstate({
     required String boc,
@@ -581,7 +581,7 @@ class ParamsOfParseShardstate extends TonSdkStructure {
 
 class ParamsOfGetBlockchainConfig extends TonSdkStructure {
   ///Key block BOC or zerostate BOC encoded as base64
-  late String? _block_boc;
+  String? _block_boc;
   String? get block_boc => _block_boc;
   ParamsOfGetBlockchainConfig({
     required String block_boc,
@@ -608,7 +608,7 @@ class ParamsOfGetBlockchainConfig extends TonSdkStructure {
 
 class ResultOfGetBlockchainConfig extends TonSdkStructure {
   ///Blockchain config BOC encoded as base64
-  late String? _config_boc;
+  String? _config_boc;
   String? get config_boc => _config_boc;
   ResultOfGetBlockchainConfig({
     required String config_boc,
@@ -635,7 +635,7 @@ class ResultOfGetBlockchainConfig extends TonSdkStructure {
 
 class ParamsOfGetBocHash extends TonSdkStructure {
   ///BOC encoded as base64 or BOC handle
-  late String? _boc;
+  String? _boc;
   String? get boc => _boc;
   ParamsOfGetBocHash({
     required String boc,
@@ -661,7 +661,7 @@ class ParamsOfGetBocHash extends TonSdkStructure {
 
 class ResultOfGetBocHash extends TonSdkStructure {
   ///BOC root hash encoded with hex
-  late String? _hash;
+  String? _hash;
   String? get hash => _hash;
   ResultOfGetBocHash({
     required String hash,
@@ -687,7 +687,7 @@ class ResultOfGetBocHash extends TonSdkStructure {
 
 class ParamsOfGetBocDepth extends TonSdkStructure {
   ///BOC encoded as base64 or BOC handle
-  late String? _boc;
+  String? _boc;
   String? get boc => _boc;
   ParamsOfGetBocDepth({
     required String boc,
@@ -713,7 +713,7 @@ class ParamsOfGetBocDepth extends TonSdkStructure {
 
 class ResultOfGetBocDepth extends TonSdkStructure {
   ///BOC root cell depth
-  late int? _depth;
+  int? _depth;
   int? get depth => _depth;
   ResultOfGetBocDepth({
     required int depth,
@@ -739,7 +739,7 @@ class ResultOfGetBocDepth extends TonSdkStructure {
 
 class ParamsOfGetCodeFromTvc extends TonSdkStructure {
   ///Contract TVC image or image BOC handle
-  late String? _tvc;
+  String? _tvc;
   String? get tvc => _tvc;
   ParamsOfGetCodeFromTvc({
     required String tvc,
@@ -765,7 +765,7 @@ class ParamsOfGetCodeFromTvc extends TonSdkStructure {
 
 class ResultOfGetCodeFromTvc extends TonSdkStructure {
   ///Contract code encoded as base64
-  late String? _code;
+  String? _code;
   String? get code => _code;
   ResultOfGetCodeFromTvc({
     required String code,
@@ -791,7 +791,7 @@ class ResultOfGetCodeFromTvc extends TonSdkStructure {
 
 class ParamsOfBocCacheGet extends TonSdkStructure {
   ///Reference to the cached BOC
-  late String? _boc_ref;
+  String? _boc_ref;
   String? get boc_ref => _boc_ref;
   ParamsOfBocCacheGet({
     required String boc_ref,
@@ -818,7 +818,7 @@ class ParamsOfBocCacheGet extends TonSdkStructure {
 
 class ResultOfBocCacheGet extends TonSdkStructure {
   ///BOC encoded as base64.
-  late String? _boc;
+  String? _boc;
   String? get boc => _boc;
   ResultOfBocCacheGet({
     String? boc,
@@ -842,11 +842,11 @@ class ResultOfBocCacheGet extends TonSdkStructure {
 
 class ParamsOfBocCacheSet extends TonSdkStructure {
   ///BOC encoded as base64 or BOC reference
-  late String? _boc;
+  String? _boc;
   String? get boc => _boc;
 
   ///Cache type
-  late BocCacheType? _cache_type;
+  BocCacheType? _cache_type;
   BocCacheType? get cache_type => _cache_type;
   ParamsOfBocCacheSet({
     required String boc,
@@ -883,7 +883,7 @@ class ParamsOfBocCacheSet extends TonSdkStructure {
 
 class ResultOfBocCacheSet extends TonSdkStructure {
   ///Reference to the cached BOC
-  late String? _boc_ref;
+  String? _boc_ref;
   String? get boc_ref => _boc_ref;
   ResultOfBocCacheSet({
     required String boc_ref,
@@ -910,11 +910,11 @@ class ResultOfBocCacheSet extends TonSdkStructure {
 
 class ParamsOfBocCacheUnpin extends TonSdkStructure {
   ///Pinned name
-  late String? _pin;
+  String? _pin;
   String? get pin => _pin;
 
   ///If it is provided then only referenced BOC is unpinned
-  late String? _boc_ref;
+  String? _boc_ref;
   String? get boc_ref => _boc_ref;
   ParamsOfBocCacheUnpin({
     required String pin,
@@ -948,11 +948,11 @@ class ParamsOfBocCacheUnpin extends TonSdkStructure {
 
 class ParamsOfEncodeBoc extends TonSdkStructure {
   ///Cell builder operations.
-  late List<BuilderOp>? _builder;
+  List<BuilderOp>? _builder;
   List<BuilderOp>? get builder => _builder;
 
   ///Cache type to put the result. The BOC itself returned if no cache type provided.
-  late BocCacheType? _boc_cache;
+  BocCacheType? _boc_cache;
   BocCacheType? get boc_cache => _boc_cache;
   ParamsOfEncodeBoc({
     required List<BuilderOp> builder,
@@ -991,7 +991,7 @@ class ParamsOfEncodeBoc extends TonSdkStructure {
 
 class ResultOfEncodeBoc extends TonSdkStructure {
   ///Encoded cell BOC or BOC cache key.
-  late String? _boc;
+  String? _boc;
   String? get boc => _boc;
   ResultOfEncodeBoc({
     required String boc,
@@ -1017,11 +1017,11 @@ class ResultOfEncodeBoc extends TonSdkStructure {
 
 class ParamsOfGetCodeSalt extends TonSdkStructure {
   ///Contract code BOC encoded as base64 or code BOC handle
-  late String? _code;
+  String? _code;
   String? get code => _code;
 
   ///Cache type to put the result. The BOC itself returned if no cache type provided.
-  late BocCacheType? _boc_cache;
+  BocCacheType? _boc_cache;
   BocCacheType? get boc_cache => _boc_cache;
   ParamsOfGetCodeSalt({
     required String code,
@@ -1055,7 +1055,7 @@ class ParamsOfGetCodeSalt extends TonSdkStructure {
 
 class ResultOfGetCodeSalt extends TonSdkStructure {
   ///BOC encoded as base64 or BOC handle
-  late String? _salt;
+  String? _salt;
   String? get salt => _salt;
   ResultOfGetCodeSalt({
     String? salt,
@@ -1079,15 +1079,15 @@ class ResultOfGetCodeSalt extends TonSdkStructure {
 
 class ParamsOfSetCodeSalt extends TonSdkStructure {
   ///Contract code BOC encoded as base64 or code BOC handle
-  late String? _code;
+  String? _code;
   String? get code => _code;
 
   ///BOC encoded as base64 or BOC handle
-  late String? _salt;
+  String? _salt;
   String? get salt => _salt;
 
   ///Cache type to put the result. The BOC itself returned if no cache type provided.
-  late BocCacheType? _boc_cache;
+  BocCacheType? _boc_cache;
   BocCacheType? get boc_cache => _boc_cache;
   ParamsOfSetCodeSalt({
     required String code,
@@ -1131,7 +1131,7 @@ class ParamsOfSetCodeSalt extends TonSdkStructure {
 
 class ResultOfSetCodeSalt extends TonSdkStructure {
   ///BOC encoded as base64 or BOC handle
-  late String? _code;
+  String? _code;
   String? get code => _code;
   ResultOfSetCodeSalt({
     required String code,
@@ -1157,11 +1157,11 @@ class ResultOfSetCodeSalt extends TonSdkStructure {
 
 class ParamsOfDecodeStateInit extends TonSdkStructure {
   ///Contract StateInit image BOC encoded as base64 or BOC handle
-  late String? _state_init;
+  String? _state_init;
   String? get state_init => _state_init;
 
   ///Cache type to put the result. The BOC itself returned if no cache type provided.
-  late BocCacheType? _boc_cache;
+  BocCacheType? _boc_cache;
   BocCacheType? get boc_cache => _boc_cache;
   ParamsOfDecodeStateInit({
     required String state_init,
@@ -1196,47 +1196,47 @@ class ParamsOfDecodeStateInit extends TonSdkStructure {
 
 class ResultOfDecodeStateInit extends TonSdkStructure {
   ///Contract code BOC encoded as base64 or BOC handle
-  late String? _code;
+  String? _code;
   String? get code => _code;
 
   ///Contract code hash
-  late String? _code_hash;
+  String? _code_hash;
   String? get code_hash => _code_hash;
 
   ///Contract code depth
-  late int? _code_depth;
+  int? _code_depth;
   int? get code_depth => _code_depth;
 
   ///Contract data BOC encoded as base64 or BOC handle
-  late String? _data;
+  String? _data;
   String? get data => _data;
 
   ///Contract data hash
-  late String? _data_hash;
+  String? _data_hash;
   String? get data_hash => _data_hash;
 
   ///Contract data depth
-  late int? _data_depth;
+  int? _data_depth;
   int? get data_depth => _data_depth;
 
   ///Contract library BOC encoded as base64 or BOC handle
-  late String? _library;
+  String? _library;
   String? get library => _library;
 
   ///Specifies the contract ability to handle tick transactions
-  late bool? _tick;
+  bool? _tick;
   bool? get tick => _tick;
 
   ///Specifies the contract ability to handle tock transactions
-  late bool? _tock;
+  bool? _tock;
   bool? get tock => _tock;
 
   ///Is present and non-zero only in instances of large smart contracts
-  late int? _split_depth;
+  int? _split_depth;
   int? get split_depth => _split_depth;
 
   ///Compiler version, for example 'sol 0.49.0'
-  late String? _compiler_version;
+  String? _compiler_version;
   String? get compiler_version => _compiler_version;
   ResultOfDecodeStateInit({
     String? code,
@@ -1341,31 +1341,31 @@ class ResultOfDecodeStateInit extends TonSdkStructure {
 
 class ParamsOfEncodeStateInit extends TonSdkStructure {
   ///Contract code BOC encoded as base64 or BOC handle
-  late String? _code;
+  String? _code;
   String? get code => _code;
 
   ///Contract data BOC encoded as base64 or BOC handle
-  late String? _data;
+  String? _data;
   String? get data => _data;
 
   ///Contract library BOC encoded as base64 or BOC handle
-  late String? _library;
+  String? _library;
   String? get library => _library;
 
   ///Specifies the contract ability to handle tick transactions
-  late bool? _tick;
+  bool? _tick;
   bool? get tick => _tick;
 
   ///Specifies the contract ability to handle tock transactions
-  late bool? _tock;
+  bool? _tock;
   bool? get tock => _tock;
 
   ///Is present and non-zero only in instances of large smart contracts
-  late int? _split_depth;
+  int? _split_depth;
   int? get split_depth => _split_depth;
 
   ///Cache type to put the result. The BOC itself returned if no cache type provided.
-  late BocCacheType? _boc_cache;
+  BocCacheType? _boc_cache;
   BocCacheType? get boc_cache => _boc_cache;
   ParamsOfEncodeStateInit({
     String? code,
@@ -1437,7 +1437,7 @@ class ParamsOfEncodeStateInit extends TonSdkStructure {
 
 class ResultOfEncodeStateInit extends TonSdkStructure {
   ///Contract StateInit image BOC encoded as base64 or BOC handle of boc_cache parameter was specified
-  late String? _state_init;
+  String? _state_init;
   String? get state_init => _state_init;
   ResultOfEncodeStateInit({
     required String state_init,
@@ -1464,23 +1464,23 @@ class ResultOfEncodeStateInit extends TonSdkStructure {
 
 class ParamsOfEncodeExternalInMessage extends TonSdkStructure {
   ///Source address.
-  late String? _src;
+  String? _src;
   String? get src => _src;
 
   ///Destination address.
-  late String? _dst;
+  String? _dst;
   String? get dst => _dst;
 
   ///Bag of cells with state init (used in deploy messages).
-  late String? _init;
+  String? _init;
   String? get init => _init;
 
   ///Bag of cells with the message body encoded as base64.
-  late String? _body;
+  String? _body;
   String? get body => _body;
 
   ///The BOC itself returned if no cache type provided
-  late BocCacheType? _boc_cache;
+  BocCacheType? _boc_cache;
   BocCacheType? get boc_cache => _boc_cache;
   ParamsOfEncodeExternalInMessage({
     String? src,
@@ -1539,11 +1539,11 @@ class ParamsOfEncodeExternalInMessage extends TonSdkStructure {
 
 class ResultOfEncodeExternalInMessage extends TonSdkStructure {
   ///Message BOC encoded with `base64`.
-  late String? _message;
+  String? _message;
   String? get message => _message;
 
   ///Message id.
-  late String? _message_id;
+  String? _message_id;
   String? get message_id => _message_id;
   ResultOfEncodeExternalInMessage({
     required String message,
@@ -1581,7 +1581,7 @@ class ResultOfEncodeExternalInMessage extends TonSdkStructure {
 
 class ParamsOfGetCompilerVersion extends TonSdkStructure {
   ///Contract code BOC encoded as base64 or code BOC handle
-  late String? _code;
+  String? _code;
   String? get code => _code;
   ParamsOfGetCompilerVersion({
     required String code,
@@ -1607,7 +1607,7 @@ class ParamsOfGetCompilerVersion extends TonSdkStructure {
 
 class ResultOfGetCompilerVersion extends TonSdkStructure {
   ///Compiler version, for example 'sol 0.49.0'
-  late String? _version;
+  String? _version;
   String? get version => _version;
   ResultOfGetCompilerVersion({
     String? version,
