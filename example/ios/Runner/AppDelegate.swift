@@ -14,8 +14,10 @@ import TonClient
     
     func dummyMethodToEnforceBundling() {
         let starLen = max("{}".utf8.count, 41)
-          var starBuf: [CChar] = Array(repeating: 0, count: starLen+1)
-          strcpy(&starBuf, "haha")
-        dart_create_context(1, &starBuf)
+        var starBuf: [CChar] = Array(repeating: 0, count: starLen+1)
+        strcpy(&starBuf, starBuf)
+        let res = dart_create_context(1, &starBuf)!
+        let r = String(cString: res)
+        print(r)
     }
 }
