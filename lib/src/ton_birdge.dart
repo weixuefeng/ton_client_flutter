@@ -7,7 +7,7 @@ DynamicLibrary loadTonLib() {
   if (Platform.isAndroid /*|| Platform.isLinux*/) {
     return DynamicLibrary.open('libton_client_dart.so');
   } else if (Platform.isIOS) {
-    return DynamicLibrary.process();
+    return DynamicLibrary.executable();
   } else if (Platform.isMacOS) {
     //return DynamicLibrary.open('${basePath}libbabyjubjub.dylib');
     throw NotSupportedPlatform('${Platform.operatingSystem} is not supported!');
