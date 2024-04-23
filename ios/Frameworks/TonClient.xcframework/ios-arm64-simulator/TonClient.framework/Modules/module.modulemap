@@ -1,5 +1,0 @@
-framework module TonClient {
-    umbrella header "TonClient.h"
-    export *
-    module * { export * }
-}
