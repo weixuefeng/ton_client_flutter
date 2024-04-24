@@ -2,6 +2,9 @@
 
 A Flutter plugin for [ever-sdk](https://github.com/everx-labs/ever-sdk/)
 
+## How to build android & iOS
+- [bulid doc](https://github.com/weixuefeng/ever-sdk/tree/feat-add-ton-sdk/ton_client_dart)
+
 
 
 ## Getting Started
@@ -47,3 +50,8 @@ var address = "0:$hash";
 print(address);
 client.disconnect();
 ```
+
+## reference
+- [freetonsurfer](https://github.com/freetonsurfer) [ton_client_dart](https://github.com/freetonsurfer/ton_client_dart)
+
+- [freetonsurfer](https://github.com/freetonsurfer) [ton_client_flutter](https://github.com/freetonsurfer/ton_client_flutter)
