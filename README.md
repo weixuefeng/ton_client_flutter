@@ -52,6 +52,6 @@ client.disconnect();
 ```
 
 ## reference
-- [freetonsurfer](https://github.com/freetonsurfer) [ton_client_dart](https://github.com/freetonsurfer/ton_client_dart)
+- [freetonsurfer](https://github.com/freetonsurfer): [ton_client_dart](https://github.com/freetonsurfer/ton_client_dart)
 
-- [freetonsurfer](https://github.com/freetonsurfer) [ton_client_flutter](https://github.com/freetonsurfer/ton_client_flutter)
+- [freetonsurfer](https://github.com/freetonsurfer): [ton_client_flutter](https://github.com/freetonsurfer/ton_client_flutter)
